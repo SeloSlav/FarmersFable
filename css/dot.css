@@ -1,0 +1,15 @@
+.dotstyle:nth-child(4n),
+.dotstyle:nth-child(4n-3) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 42em) {
+	.dotstyle:nth-child(4n),
+	.dotstyle:nth-child(4n-3) {
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	.dotstyle:nth-child(odd) {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+}
