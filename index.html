@@ -1,146 +1,194 @@
-<!doctype html>
+﻿<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>#5 - A Simple One Page Template with pinned sections</title>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Farmers Fable</title>
+	
+	<!-- Standardised web app manifest -->
+	<link rel="manifest" href="appmanifest.json" />
+	
+	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
+	<meta name="HandheldFriendly" content="true" />
+	
+	<!-- Chrome for Android web app tags -->
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
 
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		html, body {
+			background: #FFF;
+			color: #fff;
+			overflow: hidden;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+    </style>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/dot.css" />
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
-	<script src="js/modernizr.min.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-</head>
-<body class="is-loading">
-<div id="wrap1" class ="wrapper">
-	<section class ="txCenter">
-		<body>
-			<div class = "middle">
-				<h1>Farmer’s Fable</h1>
-				<h4>Competition or Cooperation</h4>
-				<h4>Which one fosters wealth better?</h4>
-				<br>
-				<div class = "center">
-				<div id="page1Start" class="button center">
-					<p>Let start !<p>
-				</div>
-				</div>
-			</div>
-			
-		</body>
-	</section>
-</div>
+	<style>
+		.dot-nav {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+		/* Fin Init */
+		.dot-nav--item {
+		  position: relative;
+		  display: block;
+		  width: 16px;
+		  height: 16px;
+		  margin-bottom: 28px;
+		  border: 3px solid #000;
+		  border-radius: 50%;
+		}
+		.dot-nav--item:before,
+		.dot-nav--item:after {
+		  content: "";
+		}
+		.dot-nav--item:before {
+		  position: absolute;
+		  top: -1px;
+		  bottom: -1px;
+		  left: -1px;
+		  right: -1px;
+		  transform: scale(0);
+		  opacity: 0;
+		  border-radius: 50%;
+		  background-color: #fff;
+		  transition: all .3s;
+		}
+		.dot-nav--item:after {
 
-<div id="wrap2" class ="wrapper">
-	<section class ="txCenter">
-		<body>
-			<div class = "middle">
-				<div style="height:100px;">
-				<div id ="text0" class="wrap2_text">
-					Imagine farmer named Bob
-				</div>
-				<div id ="text1" class="wrap2_text">
-					Bob lives in the valley. He grows crops, year in, year out.
-				</div>
-				</div>
-				<br>
-				<div class="AnimationFrame">
-					
-				</div>
-				<br>
-				<div id="page2Start" class="button right">
-					<p>Then..<p>
-				</div>
-			</div>
+		}
+		.dot-nav--item:last-child:after {
+		  display: none;
+		}
+		.dot-nav--item:hover {
+		  cursor: pointer;
+		}
+		.dot-nav--item.is-active:before {
+		  opacity: 1;
+		  transform: scale(1);
+		}
 			
-		</body>
-	</section>
-</div>
 
-<div id="wrap3" class ="wrapper">
-	<section class ="txCenter">
-		<body>
-			<div class = "middle">
-				<div style="height:100px;">
-				<div id ="3text0" class="wrap3_text">
-					As a farmer, Bob knows growth of his crops and wealth depends on twodifferent kinds of preconditions
-				</div>
-				<div id ="3text1" class="wrap3_text">
-					Lets have a short look on what Bob’s crops and wealth looks like if it is just dependent on constant preconditions
-				</div>
-				</div>
-				<br>
-				<div class="AnimationFrame">
-					
-				</div>
-				<br>
-				<div id="page3Start" class="button right">
-					<p>Then..<p>
-				</div>
-			</div>
-			
-		</body>
-	</section>
-</div>
+		
+		.dot-nav--link {
+		  position: absolute;
+		  top: 50%;
+		  visibility: hidden;
+		  transform: translate(-120%, -50%);
+		  width: auto;
+		  padding: 5px 10px;
+		  opacity: 0;
+		  color: #FFF;
+		  background-color: #000;
+		  transition: all .3s;
+		}
+		.dot-nav--link:before {
+		  content: "";
+		  position: absolute;
+		  top: 50%;
+		  left: 100%;
+		  width: 0;
+		  height: 0;
+		  border-width: 6px 0 6px 8px;
+		  border-color: transparent transparent transparent #000;
+		  border-style: solid;
+		  transform: translateY(-50%);
+		}
 
-<div id="wrap4" class ="wrapper">
-	<section class ="txCenter">
-		<body>
-			<div class = "middle">
-				<div style="height:100px;">
-				<div id ="4text0" class="wrap4_text">
-					This is some nice growth isn’t it?
-				</div>
-				<div id ="4text1" class="wrap4_text">
-					How can we represent this on a graph?
-				</div>
-				</div>
-				<br>
-				<div class="AnimationFrame">
-					<canvas id="Chart1" width="400" height="400"></canvas>
-				</div>
-				<br>
-				<div id="page3Start" class="button right">
-					<p>Then..<p>
-				</div>
-			</div>
-			
-			
-		</body>
-	</section>
-</div>
+		.dot-nav--item:hover .dot-nav--link {
+		  visibility: visible;
+		  opacity: 1;
+		  transform: translate(-110%, -50%);
+		}
+		*/
 
-<div id="wrap5" class ="wrapper">
-	<section class ="txCenter">
-		<body>
-			<div class = "middle">
-				<h1>The End</h1>
-			</div>
-		</body>
-	</section>
-</div>
+		.wrap2_text::before{
+			content: "";
+			position: absolute;
+			top: 15px;
+			left: 100%;
+			width: 0;
+			height: 0;
+			border-width: 10px 0 10px 20px;
+			border-color: transparent transparent transparent #000;
+			border-style: solid;
+		}
+		.wrap2_text {
+			padding : 15px;
+			position: relative;
+			background-color: #000;
+			color: #fff;
+			border-radius: 10px;
+			opacity:0;
+		}
+	</style>
 
-<div id="wrapLoading" class ="loading">
+</head> 
+ 
+<body> 
+	<div id="fb-root"></div>
 	
-</div>
 
-<div class = "wrap_nav">
-	<div class="dotstyle dotstyle-tooltip middle">
-		<ul>
-			<li id='page1' class="current"><a href="#">Intro</a></li>
-			<li id='page2'><a href="#">Story</a></li>
-			<li id='page3'><a href="#">Problem #1</a></li>
-			<li id='page4'><a href="#">Graph</a></li>
-			<li id='page5'><a href="#">End</a></li>
-		</ul>
+	
+	<!-- The canvas must be inside a div called c2canvasdiv -->
+	<div id="c2canvasdiv">
+	
+		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
+		<canvas id="c2canvas" width="1200" height="1200">
+			<!-- This text is displayed if the visitor's browser does not support HTML5.
+			You can change it, but it is a good idea to link to a description of a browser
+			and provide some links to download some popular HTML5-compatible browsers. -->
+			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
+			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
+			<a href="http://www.apple.com/safari/download/">Apple Safari</a></h1>
+		</canvas>
+		
 	</div>
-</div>
+	
+	<div class = "wrap_nav">
+		<nav class="dot-nav">
+		  <ul class="dot-nav--list list-unstyled">
+			<li id='page1' class="dot-nav--item is-active"><a href="#" class="dot-nav--link">Intro</a></li>
+			<li id='page2' class="dot-nav--item"><a href="#" class="dot-nav--link">Story</a></li>
+			<li id='page3' class="dot-nav--item"><a href="#" class="dot-nav--link">Problem #1</a></li>
+			<li id='page4'class="dot-nav--item"><a href="#" class="dot-nav--link">Graph</a></li>
+			<li id='page5' class="dot-nav--item"><a href="#" class="dot-nav--link">End</a></li>
+		  </ul>
+		</nav>
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="c2runtime.js"></script>
 
-<script src="js/main.js"></script>
-</body>
-</html>
+    <script>
+		jQuery(document).ready(function ()
+		{			
+			cr_createRuntime("c2canvas");
+		});
+		
+    </script>
+</body> 
+</html> 
