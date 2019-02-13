@@ -15,7 +15,7 @@ _chart.chart_0.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
 		datasets: [{
-		label: 'Bob 10 Years',
+		label: 'Bob 4 Years',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
