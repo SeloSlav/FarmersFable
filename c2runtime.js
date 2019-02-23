@@ -20665,7 +20665,7 @@ cr.plugins_.SilverAIMSupport = function(runtime)
 	function Exps() {};
 	Exps.prototype.data = function (ret,_tag) {
 		var _return = "";
-		if (typeof window[_tag] != 'undefined')
+		if (typeof window[_tag] == 'function')
 			_return = window[_tag];
 		ret.set_string(_return);
 	};
@@ -25948,7 +25948,6 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.lunarray_Tween,
 	cr.system_object.prototype.cnds.OnLayoutStart,
 	cr.system_object.prototype.acts.ResetGlobals,
-	cr.plugins_.Audio.prototype.acts.Play,
 	cr.system_object.prototype.acts.SetVar,
 	cr.plugins_.SpriteFontPlus.prototype.acts.SetOpacity,
 	cr.plugins_.SpriteFontPlus.prototype.acts.SetY,
@@ -25958,6 +25957,8 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Rex_MoveTo.prototype.acts.SetEnabled,
 	cr.plugins_.Sprite.prototype.acts.SetX,
 	cr.plugins_.Sprite.prototype.exps.X,
+	cr.plugins_.Audio.prototype.cnds.IsTagPlaying,
+	cr.plugins_.Audio.prototype.acts.Play,
 	cr.plugins_.Touch.prototype.cnds.OnTouchObject,
 	cr.system_object.prototype.cnds.CompareVar,
 	cr.system_object.prototype.acts.Wait,
@@ -25983,6 +25984,7 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.loopindex,
 	cr.system_object.prototype.acts.SetLayerVisible,
 	cr.plugins_.Arr.prototype.acts.SetSize,
+	cr.system_object.prototype.cnds.Compare,
 	cr.plugins_.Arr.prototype.acts.Push,
 	cr.system_object.prototype.exps.newline,
 	cr.plugins_.Arr.prototype.cnds.ArrForEach,
