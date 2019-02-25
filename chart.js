@@ -8,6 +8,7 @@ var _chart = {
 	chart_4 : {},
 	chart_5 : {},
 	chart_6 : {},
+	chart_7 : {},
 };
 
 _chart.chart_0.config = {
@@ -15,7 +16,7 @@ _chart.chart_0.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
 		datasets: [{
-		label: 'Bob 4 Years',
+		label: 'Bob 10 Years',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -565,3 +566,142 @@ _chart.chart_6.hide = function(_value){
 	_chart_6.style.display = 'none';
 }
 //
+//
+_chart.chart_7.config = {
+	type: 'line',
+	data: {
+		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
+		datasets: [{
+			label: 'Bob',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(54, 162, 235)",
+			borderColor: "rgb(54, 162, 235)",
+		},
+		{
+			label: 'Steve',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(255, 99, 132)",
+			borderColor: "rgb(255, 99, 132)",
+		},
+		{
+			label: 'Mike',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(230, 230, 250)",
+			borderColor: "rgb(230, 230, 250)",
+		},
+		{
+			label: 'John',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(34,139,34)",
+			borderColor: "rgb(34,139,34)",
+		},
+		{
+			label: 'Pool',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(34,139,34)",
+			borderColor: "rgb(34,139,34)",
+		}]
+	},
+	options: {
+		responsive: true,
+		title: {
+			display: true,
+			text: 'Not Sharing'
+		},
+		tooltips: {
+			mode: 'index',
+			intersect: false,
+		},
+		hover: {
+			mode: 'nearest',
+			intersect: true
+		},
+		scales: {
+			xAxes: [{
+				display: true,
+				scaleLabel: {
+					display: true
+				}
+			}],
+			yAxes: [{
+				display: true,
+				ticks: {
+					min: 0,
+					max: 2000
+				}
+			}]
+		}
+	}
+};
+_chart.chart_7.show = function(){
+	var _chart_7 = document.getElementById('chart_7_container');
+	
+	window._placeHolder_1 = document.getElementById('placeHolder_7');
+	
+	_chart_7.style.width = _placeHolder_1.style.width;
+	_chart_7.style.height = _placeHolder_1.style.height;
+	_chart_7.style.top = _placeHolder_1.style.top;
+	_chart_7.style.left = _placeHolder_1.style.left;
+	_chart_7.style.zIndex = "999";
+	var ctx = document.getElementById('chart_7').getContext('2d');
+	ctx.canvas.width = $('#placeHolder_1').width();
+	ctx.canvas.height = $('#placeHolder_1').height();
+	ctx.canvas.originalwidth = ctx.canvas.width;
+	ctx.canvas.originalheight = ctx.canvas.height;
+	_chart_7.style.display = 'block';
+	_chart.chart_7.chart = new Chart(ctx, _chart.chart_7.config);
+}
+
+_chart.chart_7.update_0 = function(_value){
+	_chart.chart_7.config.data.datasets[0].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_1 = function(_value){
+	_chart.chart_7.config.data.datasets[1].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_2 = function(_value){
+	_chart.chart_7.config.data.datasets[2].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_3 = function(_value){
+	_chart.chart_7.config.data.datasets[3].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_4 = function(_value){
+	_chart.chart_7.config.data.datasets[4].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.reset = function(_value){
+	_chart.chart_7.config.data.datasets[0].data = [];
+	_chart.chart_7.config.data.datasets[1].data = [];
+	_chart.chart_7.config.data.datasets[2].data = [];
+	_chart.chart_7.config.data.datasets[3].data = [];
+	_chart.chart_7.config.data.datasets[4].data = [];
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.hide = function(_value){
+	var _chart_7 = document.getElementById('chart_7_container');
+	_chart_7.style.display = 'none';
+}
