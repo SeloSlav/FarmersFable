@@ -570,7 +570,7 @@ _chart.chart_6.hide = function(_value){
 _chart.chart_7.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
+		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5' ,'Year 6' ,'Year 7' ,'Year 8' ,'Year 9' ,'Year 10' ],
 		datasets: [{
 			label: 'Bob',
 			data: [],
@@ -613,8 +613,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(34,139,34)",
-			borderColor: "rgb(34,139,34)",
+			backgroundColor: "rgb(0,0,0)",
+			borderColor: "rgb(0,0,0)",
 		}]
 	},
 	options: {
