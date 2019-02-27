@@ -43,8 +43,7 @@ _chart.chart_0.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -117,8 +116,7 @@ _chart.chart_1.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -201,8 +199,7 @@ _chart.chart_2.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -295,8 +292,7 @@ _chart.chart_3.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -379,8 +375,7 @@ _chart.chart_4.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -452,8 +447,7 @@ _chart.chart_5.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -525,8 +519,7 @@ _chart.chart_6.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
@@ -641,8 +634,7 @@ _chart.chart_7.config = {
 			yAxes: [{
 				display: true,
 				ticks: {
-					min: 0,
-					max: 2000
+					min: 0
 				}
 			}]
 		}
