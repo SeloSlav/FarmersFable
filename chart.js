@@ -14,9 +14,10 @@ var _chart = {
 _chart.chart_0.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
+		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
-		label: 'Bob 10 Years',
+		lineTension: 0,
+		label: 'Bob',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -87,9 +88,10 @@ _chart.chart_0.hide = function(_value){
 _chart.chart_1.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5' ,'Year 6' ,'Year 7' ,'Year 8' ,'Year 9' ,'Year 10' ],
+		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'],
 		datasets: [{
-		label: 'Bob 10 Years',
+		lineTension: 0,
+		label: 'Bob',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -142,7 +144,12 @@ _chart.chart_1.show = function(){
 }
 
 _chart.chart_1.update = function(_value){
-	_chart.chart_1.config.data.datasets[0].data.push(_value);
+	if ( _chart.chart_1.config.data.datasets[0].data.length < 5) {
+		_chart.chart_1.config.data.datasets[0].data.push(_value);
+	} else {
+		_chart.chart_1.config.data.datasets[0].data.push(_value);
+		_chart.chart_1.config.data.labels.push("Year "+(parseInt(_chart.chart_1.config.data.datasets[0].data.length)));
+	}
 	_chart.chart_1.chart.update();
 }
 
@@ -161,6 +168,7 @@ _chart.chart_2.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
+			lineTension: 0,
 			label: 'Bob',
 			data: [],
 			fill: false,
@@ -250,6 +258,7 @@ _chart.chart_3.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
+			lineTension: 0,
 			label: 'Bob',
 			data: [],
 			fill: false,
@@ -342,6 +351,7 @@ _chart.chart_4.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
+			lineTension: 0,
 			label: 'Bob & Steve',
 			data: [],
 			fill: false,
@@ -420,6 +430,7 @@ _chart.chart_5.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
 		datasets: [{
+		lineTension: 0,
 		label: 'Bob 10 Years',
 		data: [],
 		fill: false,
@@ -492,7 +503,8 @@ _chart.chart_6.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
 		datasets: [{
-		label: 'Bob 10 Years',
+		lineTension: 0,
+		label: 'Bob',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -566,6 +578,7 @@ _chart.chart_7.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5' ,'Year 6' ,'Year 7' ,'Year 8' ,'Year 9' ,'Year 10' ],
 		datasets: [{
 			label: 'Bob',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -575,6 +588,7 @@ _chart.chart_7.config = {
 		},
 		{
 			label: 'Steve',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -584,6 +598,7 @@ _chart.chart_7.config = {
 		},
 		{
 			label: 'Mike',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -593,6 +608,7 @@ _chart.chart_7.config = {
 		},
 		{
 			label: 'John',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -602,6 +618,7 @@ _chart.chart_7.config = {
 		},
 		{
 			label: 'Pool',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -613,7 +630,7 @@ _chart.chart_7.config = {
 	options: {
 		responsive: true,
 		title: {
-			display: true,
+			display: false,
 			text: 'Not Sharing'
 		},
 		tooltips: {

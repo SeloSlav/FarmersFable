@@ -187,6 +187,11 @@
 	</div>
 	
 	<div class = "wrap_nav">
+		<div style="margin: auto;padding: 10px;">
+			<div id="sound_btn">
+				<img src = "Intro_sound_on.png" style="width:100%"></img>
+			</div>
+		</div>
 		<nav class="dot-nav">
 		  <ul class="dot-nav--list list-unstyled">
 			<li id='page1' class="dot-nav--item is-active"><a href="#" class="dot-nav--link">Intro</a></li>
@@ -203,6 +208,7 @@
 
     <script>
 		var _cr = null;
+		var _sound = true;
 		jQuery(document).ready(function ()
 		{			
 			cr_createRuntime("c2canvas");
@@ -219,8 +225,21 @@
 			$('#page4').click(function(){
 				_cr.changelayout = _cr.layouts.end;
 			});
+			$('#sound_btn').click(function(){
+				var _tmp = _sound;
+				if (_tmp){
+					_sound = false;
+					$("#sound_btn img").attr("src","Intro_sound_off.png");
+				} else {
+					_sound = true;
+					$("#sound_btn img").attr("src","Intro_sound_on.png");
+				}
+			});
 		});
-		
+		function _getSound(){
+			if (_sound) return 1;
+			else return 0;
+		}
     </script>
 </body> 
 </html> 
