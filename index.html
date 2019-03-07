@@ -214,15 +214,23 @@
 			cr_createRuntime("c2canvas");
 			_cr = cr_getC2Runtime();
 			$('#page1').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page1' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.intro;
 			});
 			$('#page2').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page2' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.bob;
 			});
 			$('#page3').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page3' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.col;
 			});
 			$('#page4').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page4' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.end;
 			});
 			$('#sound_btn').click(function(){
@@ -239,6 +247,22 @@
 		function _getSound(){
 			if (_sound) return 1;
 			else return 0;
+		}
+		function gotoPage1(){
+			$( '.dot-nav--item' ).removeClass( "is-active" );
+			$( '#page1' ).addClass( "is-active" );
+		}
+		function gotoPage2(){
+			$( '.dot-nav--item' ).removeClass( "is-active" );
+			$( '#page2' ).addClass( "is-active" );
+		}
+		function gotoPage3(){
+			$( '.dot-nav--item' ).removeClass( "is-active" );
+			$( '#page3' ).addClass( "is-active" );
+		}
+		function gotoPage4(){
+			$( '.dot-nav--item' ).removeClass( "is-active" );
+			$( '#page4' ).addClass( "is-active" );
 		}
     </script>
 </body> 
