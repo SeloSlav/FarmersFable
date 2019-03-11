@@ -16451,7 +16451,6 @@ cr.plugins_.Arr = function(runtime)
 }());
 ;
 ;
-var BMGisOFFLINE;
 cr.plugins_.Audio = function(runtime)
 {
 	this.runtime = runtime;
@@ -16495,9 +16494,86 @@ cr.plugins_.Audio = function(runtime)
 	var rolloffFactor = 1;
 	var micSource = null;
 	var micTag = "";
-	var isMusicWorkaround = false;
-	var musicPlayNextTouch = [];
+	var useNextTouchWorkaround = false;			// heuristic in case play() does not return a promise and we have to guess if the play was blocked
+	var playOnNextInput = [];					// C2AudioInstances with HTMLAudioElements to play on next input event
 	var playMusicAsSoundWorkaround = false;		// play music tracks with Web Audio API
+	var hasPlayedDummyBuffer = false;			// dummy buffer played to unblock AudioContext on some platforms
+	function addAudioToPlayOnNextInput(a)
+	{
+		var i = playOnNextInput.indexOf(a);
+		if (i === -1)
+			playOnNextInput.push(a);
+	};
+	function tryPlayAudioElement(a)
+	{
+		var audioElem = a.instanceObject;
+		var playRet;
+		try {
+			playRet = audioElem.play();
+		}
+		catch (err) {
+			addAudioToPlayOnNextInput(a);
+			return;
+		}
+		if (playRet)		// promise was returned
+		{
+			playRet.catch(function (err)
+			{
+				addAudioToPlayOnNextInput(a);
+			});
+		}
+		else if (useNextTouchWorkaround && !audRuntime.isInUserInputEvent)
+		{
+			addAudioToPlayOnNextInput(a);
+		}
+	};
+	function playQueuedAudio()
+	{
+		var i, len, m, playRet;
+		if (!hasPlayedDummyBuffer && !isContextSuspended && context)
+		{
+			playDummyBuffer();
+			if (context["state"] === "running")
+				hasPlayedDummyBuffer = true;
+		}
+		var tryPlay = playOnNextInput.slice(0);
+		cr.clearArray(playOnNextInput);
+		if (!silent)
+		{
+			for (i = 0, len = tryPlay.length; i < len; ++i)
+			{
+				m = tryPlay[i];
+				if (!m.stopped && !m.is_paused)
+				{
+					playRet = m.instanceObject.play();
+					if (playRet)
+					{
+						playRet.catch(function (err)
+						{
+							addAudioToPlayOnNextInput(m);
+						});
+					}
+				}
+			}
+		}
+	};
+	function playDummyBuffer()
+	{
+		if (context["state"] === "suspended" && context["resume"])
+			context["resume"]();
+		if (!context["createBuffer"])
+			return;
+		var buffer = context["createBuffer"](1, 220, 22050);
+		var source = context["createBufferSource"]();
+		source["buffer"] = buffer;
+		source["connect"](context["destination"]);
+		startSource(source);
+	};
+	document.addEventListener("pointerup", playQueuedAudio, true);
+	document.addEventListener("touchend", playQueuedAudio, true);
+	document.addEventListener("click", playQueuedAudio, true);
+	document.addEventListener("keydown", playQueuedAudio, true);
+	document.addEventListener("gamepadconnected", playQueuedAudio, true);
 	function dbToLinear(x)
 	{
 		var v = dbToLinear_nocap(x);
@@ -17236,25 +17312,14 @@ cr.plugins_.Audio = function(runtime)
 	AnalyserEffect.prototype.setParam = function(param, value, ramp, time)
 	{
 	};
-	var OT_POS_SAMPLES = 4;
 	function ObjectTracker()
 	{
 		this.obj = null;
 		this.loadUid = 0;
-		this.speeds = [];
-		this.lastX = 0;
-		this.lastY = 0;
-		this.moveAngle = 0;
 	};
 	ObjectTracker.prototype.setObject = function (obj_)
 	{
 		this.obj = obj_;
-		if (this.obj)
-		{
-			this.lastX = this.obj.x;
-			this.lastY = this.obj.y;
-		}
-		cr.clearArray(this.speeds);
 	};
 	ObjectTracker.prototype.hasObject = function ()
 	{
@@ -17262,41 +17327,7 @@ cr.plugins_.Audio = function(runtime)
 	};
 	ObjectTracker.prototype.tick = function (dt)
 	{
-		if (!this.obj || dt === 0)
-			return;
-		this.moveAngle = cr.angleTo(this.lastX, this.lastY, this.obj.x, this.obj.y);
-		var s = cr.distanceTo(this.lastX, this.lastY, this.obj.x, this.obj.y) / dt;
-		if (this.speeds.length < OT_POS_SAMPLES)
-			this.speeds.push(s);
-		else
-		{
-			this.speeds.shift();
-			this.speeds.push(s);
-		}
-		this.lastX = this.obj.x;
-		this.lastY = this.obj.y;
 	};
-	ObjectTracker.prototype.getSpeed = function ()
-	{
-		if (!this.speeds.length)
-			return 0;
-		var i, len, sum = 0;
-		for (i = 0, len = this.speeds.length; i < len; i++)
-		{
-			sum += this.speeds[i];
-		}
-		return sum / this.speeds.length;
-	};
-	ObjectTracker.prototype.getVelocityX = function ()
-	{
-		return Math.cos(this.moveAngle) * this.getSpeed();
-	};
-	ObjectTracker.prototype.getVelocityY = function ()
-	{
-		return Math.sin(this.moveAngle) * this.getSpeed();
-	};
-	var iOShadtouchstart = false;	// has had touch start input on iOS <=8 to work around web audio API muting
-	var iOShadtouchend = false;		// has had touch end input on iOS 9+ to work around web audio API muting
 	function C2AudioBuffer(src_, is_music)
 	{
 		this.src = src_;
@@ -17332,7 +17363,7 @@ cr.plugins_.Audio = function(runtime)
 				this.supportWebAudioAPI = true;		// can be routed through web audio api
 				this.bufferObject.addEventListener("canplay", function ()
 				{
-					if (!self.mediaSourceNode)		// protect against this event firing twice
+					if (!self.mediaSourceNode && self.bufferObject)
 					{
 						self.mediaSourceNode = context["createMediaElementSource"](self.bufferObject);
 						self.mediaSourceNode["connect"](self.outNode);
@@ -17391,6 +17422,16 @@ cr.plugins_.Audio = function(runtime)
 				++j;		// keep
 		}
 		audioInstances.length = j;
+		if (this.mediaSourceNode)
+		{
+			this.mediaSourceNode["disconnect"]();
+			this.mediaSourceNode = null;
+		}
+		if (this.outNode)
+		{
+			this.outNode["disconnect"]();
+			this.outNode = null;
+		}
 		this.bufferObject = null;
 		this.audioData = null;
 	};
@@ -17746,9 +17787,6 @@ cr.plugins_.Audio = function(runtime)
 			a = inst.angle - inst.layer.getAngle();
 			this.pannerNode["setOrientation"](Math.cos(a), Math.sin(a), 0);
 		}
-		px = cr.rotatePtAround(this.objectTracker.getVelocityX(), this.objectTracker.getVelocityY(), -inst.layer.getAngle(), 0, 0, true);
-		py = cr.rotatePtAround(this.objectTracker.getVelocityX(), this.objectTracker.getVelocityY(), -inst.layer.getAngle(), 0, 0, false);
-		this.pannerNode["setVelocity"](px, py, 0);
 	};
 	C2AudioInstance.prototype.play = function (looping, vol, fromPosition, scheduledTime)
 	{
@@ -17777,18 +17815,7 @@ cr.plugins_.Audio = function(runtime)
 ;
 				}
 			}
-			if (this.is_music && isMusicWorkaround && !audRuntime.isInUserInputEvent)
-				musicPlayNextTouch.push(this);
-			else
-			{
-				try {
-					this.instanceObject.play();
-				}
-				catch (e) {		// sometimes throws on WP8.1... try not to kill the app
-					if (console && console.log)
-						console.log("[C2] WARNING: exception trying to play audio '" + this.buffer.src + "': ", e);
-				}
-			}
+			tryPlayAudioElement(this);
 			break;
 		case API_WEBAUDIO:
 			this.muted = false;
@@ -17828,10 +17855,7 @@ cr.plugins_.Audio = function(runtime)
 ;
 					}
 				}
-				if (this.is_music && isMusicWorkaround && !audRuntime.isInUserInputEvent)
-					musicPlayNextTouch.push(this);
-				else
-					instobj.play();
+				tryPlayAudioElement(this);
 			}
 			break;
 		case API_CORDOVA:
@@ -17920,7 +17944,7 @@ cr.plugins_.Audio = function(runtime)
 			return;
 		switch (this.myapi) {
 		case API_HTML5:
-			this.instanceObject.play();
+			tryPlayAudioElement(this);
 			break;
 		case API_WEBAUDIO:
 			if (this.buffer.myapi === API_WEBAUDIO)
@@ -17938,7 +17962,7 @@ cr.plugins_.Audio = function(runtime)
 			}
 			else
 			{
-				this.instanceObject.play();
+				tryPlayAudioElement(this);
 			}
 			break;
 		case API_CORDOVA:
@@ -18296,7 +18320,7 @@ cr.plugins_.Audio = function(runtime)
 			playMusicAsSoundWorkaround = true;
 		if ((this.runtime.isiOS || (this.runtime.isAndroid && (this.runtime.isChrome || this.runtime.isAndroidStockBrowser))) && !this.runtime.isCrosswalk && !this.runtime.isDomFree && !this.runtime.isAmazonWebApp && !playMusicAsSoundWorkaround)
 		{
-			isMusicWorkaround = true;
+			useNextTouchWorkaround = true;
 		}
 		context = null;
 		if (typeof AudioContext !== "undefined")
@@ -18317,46 +18341,6 @@ cr.plugins_.Audio = function(runtime)
 				context = new AudioContext();
 			else if (typeof webkitAudioContext !== "undefined")
 				context = new webkitAudioContext();
-		}
-		var isAndroid = this.runtime.isAndroid;
-		var playDummyBuffer = function ()
-		{
-			if (isContextSuspended || !context["createBuffer"])
-				return;
-			var buffer = context["createBuffer"](1, 220, 22050);
-			var source = context["createBufferSource"]();
-			source["buffer"] = buffer;
-			source["connect"](context["destination"]);
-			startSource(source);
-		};
-		if (isMusicWorkaround)
-		{
-			var playQueuedMusic = function ()
-			{
-				var i, len, m;
-				if (isMusicWorkaround)
-				{
-					if (!silent)
-					{
-						for (i = 0, len = musicPlayNextTouch.length; i < len; ++i)
-						{
-							m = musicPlayNextTouch[i];
-							if (!m.stopped && !m.is_paused)
-								m.instanceObject.play();
-						}
-					}
-					cr.clearArray(musicPlayNextTouch);
-				}
-			};
-			document.addEventListener("touchend", function ()
-			{
-				if (!iOShadtouchend && context)
-				{
-					playDummyBuffer();
-					iOShadtouchend = true;
-				}
-				playQueuedMusic();
-			}, true);
 		}
 		if (api !== API_WEBAUDIO)
 		{
@@ -18385,7 +18369,8 @@ cr.plugins_.Audio = function(runtime)
 			else
 			{
 				try {
-					useOgg = !!(new Audio().canPlayType('audio/ogg; codecs="vorbis"'));
+					useOgg = !!(new Audio().canPlayType('audio/ogg; codecs="vorbis"')) &&
+								!this.runtime.isWindows10;
 				}
 				catch (e)
 				{
@@ -18408,7 +18393,7 @@ cr.plugins_.Audio = function(runtime)
 			default:
 ;
 			}
-			this.runtime.tickMe(this);
+		this.runtime.tickMe(this);
 		}
 	};
 	var instanceProto = pluginProto.Instance.prototype;
@@ -18430,8 +18415,6 @@ cr.plugins_.Audio = function(runtime)
 		var draw_height = (this.runtime.draw_height || this.runtime.height);
 		if (api === API_WEBAUDIO)
 		{
-			if (typeof context["listener"]["dopplerFactor"] !== "undefined")
-				context["listener"]["dopplerFactor"] = 0;
 			context["listener"]["setPosition"](draw_width / 2, draw_height / 2, this.listenerZ);
 			context["listener"]["setOrientation"](0, 0, 1, 0, -1, 0);
 			window["c2OnAudioMicStream"] = function (localMediaStream, tag)
@@ -18782,7 +18765,6 @@ cr.plugins_.Audio = function(runtime)
 			listenerX = this.listenerTracker.obj.x;
 			listenerY = this.listenerTracker.obj.y;
 			context["listener"]["setPosition"](this.listenerTracker.obj.x, this.listenerTracker.obj.y, this.listenerZ);
-			context["listener"]["setVelocity"](this.listenerTracker.getVelocityX(), this.listenerTracker.getVelocityY(), 0);
 		}
 	};
 	var preload_list = [];
@@ -18850,7 +18832,7 @@ cr.plugins_.Audio = function(runtime)
 		}
 		audioBuffers.length = j;
 	};
-	instanceProto.getAudioBuffer = function (src_, is_music)
+	instanceProto.getAudioBuffer = function (src_, is_music, dont_create)
 	{
 		var i, len, a, ret = null, j, k, lenj, ai;
 		for (i = 0, len = audioBuffers.length; i < len; i++)
@@ -18862,7 +18844,7 @@ cr.plugins_.Audio = function(runtime)
 				break;
 			}
 		}
-		if (!ret)
+		if (!ret && !dont_create)
 		{
 			if (playMusicAsSoundWorkaround && is_music)
 				this.releaseAllMusicBuffers();
@@ -19023,30 +19005,6 @@ cr.plugins_.Audio = function(runtime)
 		var v = dbToLinear(vol);
 		var is_music = file[1];
 		var src = this.runtime.files_subfolder + file[0] + (useOgg ? ".ogg" : ".m4a");
-		if (typeof BMGisOFFLINE !== 'undefined'){
-			for(var i = 0;i < mbiz_media.length;i++){
-				if (mbiz_media[i]["name"] == file[0]){
-					if (useOgg) src = mbiz_media[i]["ogg"];
-					else src = mbiz_media[i]["m4a"];
-				}
-			}
-		}
-		lastAudio = this.getAudioInstance(src, tag, is_music, looping!==0, v);
-		if (!lastAudio)
-			return;
-		lastAudio.setPannerEnabled(false);
-		lastAudio.play(looping!==0, v, 0, this.nextPlayTime);
-		this.nextPlayTime = 0;
-	};
-	/* namnx extends function PlayURL
-	*	can play audio through url
-	*/
-	Acts.prototype.PlayUrl = function (src, looping, vol, tag)
-	{
-		if (silent)
-			return;
-		var v = dbToLinear(vol);
-		var is_music = false;
 		lastAudio = this.getAudioInstance(src, tag, is_music, looping!==0, v);
 		if (!lastAudio)
 			return;
@@ -19105,14 +19063,6 @@ cr.plugins_.Audio = function(runtime)
 		var v = dbToLinear(vol);
 		var is_music = (folder === 1);
 		var src = this.runtime.files_subfolder + filename.toLowerCase() + (useOgg ? ".ogg" : ".m4a");
-		if (typeof BMGisOFFLINE !== 'undefined'){
-			for(var i = 0;i < mbiz_media.length;i++){
-				if (mbiz_media[i]["name"].toLowerCase() == filename.toLowerCase()){
-					if (useOgg) src = mbiz_media[i]["ogg"];
-					else src = mbiz_media[i]["m4a"];
-				}
-			}
-		}
 		lastAudio = this.getAudioInstance(src, tag, is_music, looping!==0, v);
 		if (!lastAudio)
 			return;
@@ -19192,34 +19142,6 @@ cr.plugins_.Audio = function(runtime)
 			return;
 		var is_music = file[1];
 		var src = this.runtime.files_subfolder + file[0] + (useOgg ? ".ogg" : ".m4a");
-		if (typeof BMGisOFFLINE !== 'undefined'){
-			for(var i = 0;i < mbiz_media.length;i++){
-				if (mbiz_media[i]["name"] == file[0]){
-					if (useOgg) src = mbiz_media[i]["ogg"];
-					else src = mbiz_media[i]["m4a"];
-				}
-			}
-		}
-		if (api === API_APPMOBI)
-		{
-			if (this.runtime.isDirectCanvas)
-				AppMobi["context"]["loadSound"](src);
-			else
-				AppMobi["player"]["loadSound"](src);
-			return;
-		}
-		else if (api === API_CORDOVA)
-		{
-			return;
-		}
-		this.getAudioInstance(src, "<preload>", is_music, false);
-	};
-/* namnx extends preload URL */
-	Acts.prototype.PreloadUrl = function (src)
-	{
-		if (silent)
-			return;
-		var is_music = false;
 		if (api === API_APPMOBI)
 		{
 			if (this.runtime.isDirectCanvas)
@@ -19240,14 +19162,6 @@ cr.plugins_.Audio = function(runtime)
 			return;
 		var is_music = (folder === 1);
 		var src = this.runtime.files_subfolder + filename.toLowerCase() + (useOgg ? ".ogg" : ".m4a");
-		if (typeof BMGisOFFLINE !== 'undefined'){
-			for(var i = 0;i < mbiz_media.length;i++){
-				if (mbiz_media[i]["name"].toLowerCase() == filename.toLowerCase()){
-					if (useOgg) src = mbiz_media[i]["ogg"];
-					else src = mbiz_media[i]["m4a"];
-				}
-			}
-		}
 		if (api === API_APPMOBI)
 		{
 			if (this.runtime.isDirectCanvas)
@@ -19281,9 +19195,8 @@ cr.plugins_.Audio = function(runtime)
 	Acts.prototype.StopAll = function ()
 	{
 		var i, len;
-		for (i = 0, len = audioInstances.length; i < len; i++){
+		for (i = 0, len = audioInstances.length; i < len; i++)
 			audioInstances[i].stop();
-		}
 	};
 	Acts.prototype.SetPaused = function (tag, state)
 	{
@@ -19377,14 +19290,6 @@ cr.plugins_.Audio = function(runtime)
 			return;
 		var doNormalize = (norm === 0);
 		var src = this.runtime.files_subfolder + file[0] + (useOgg ? ".ogg" : ".m4a");
-		if (typeof BMGisOFFLINE !== 'undefined'){
-			for(var i = 0;i < mbiz_media.length;i++){
-				if (mbiz_media[i]["name"] == file[0]){
-					if (useOgg) src = mbiz_media[i]["ogg"];
-					else src = mbiz_media[i]["m4a"];
-				}
-			}
-		}
 		var b = this.getAudioBuffer(src, false);
 		tag = tag.toLowerCase();
 		mix = mix / 100;
@@ -19513,6 +19418,35 @@ cr.plugins_.Audio = function(runtime)
 		if (!context)
 			return;		// needs Web Audio API
 		this.nextPlayTime = t;
+	};
+	Acts.prototype.UnloadAudio = function (file)
+	{
+		var is_music = file[1];
+		var src = this.runtime.files_subfolder + file[0] + (useOgg ? ".ogg" : ".m4a");
+		var b = this.getAudioBuffer(src, is_music, true /* don't create if missing */);
+		if (!b)
+			return;		// not loaded
+		b.release();
+		cr.arrayFindRemove(audioBuffers, b);
+	};
+	Acts.prototype.UnloadAudioByName = function (folder, filename)
+	{
+		var is_music = (folder === 1);
+		var src = this.runtime.files_subfolder + filename.toLowerCase() + (useOgg ? ".ogg" : ".m4a");
+		var b = this.getAudioBuffer(src, is_music, true /* don't create if missing */);
+		if (!b)
+			return;		// not loaded
+		b.release();
+		cr.arrayFindRemove(audioBuffers, b);
+	};
+	Acts.prototype.UnloadAll = function ()
+	{
+		var i, len;
+		for (i = 0, len = audioBuffers.length; i < len; ++i)
+		{
+			audioBuffers[i].release();
+		};
+		cr.clearArray(audioBuffers);
 	};
 	pluginProto.acts = new Acts();
 	function Exps() {};
@@ -21927,6 +21861,7 @@ cr.plugins_.Sprite = function(runtime)
 /* jshint strict: true */
 ;
 ;
+var BMGisOFFLINE;
 var jText = '';
 cr.plugins_.SpriteFontPlus = function(runtime)
 {
@@ -21951,6 +21886,15 @@ cr.plugins_.SpriteFontPlus = function(runtime)
 		this.texture_img = new Image();
 		this.texture_img["idtkLoadDisposed"] = true;
 		this.texture_img.src = this.texture_file;
+		if (BMGisOFFLINE){
+			if (typeof BMGisOFFLINE !== 'undefined'){
+				for(var i = 0;i < mbiz_image.length;i++){
+					if (mbiz_image[i]["name"].toLowerCase() == this.texture_file.toLowerCase()){
+						this.texture_img.src = mbiz_image[i]["data"];
+					}
+				}
+			}
+		}
 		this.runtime.wait_for_textures.push(this.texture_img);
 		this.webGL_texture = null;
 	};
@@ -22058,9 +22002,9 @@ cr.plugins_.SpriteFontPlus = function(runtime)
 			}
 		}
 		catch(e){
-			if(window.console && window.console.log) {
+			/*if(window.console && window.console.log) {
 				window.console.log('SpriteFont+ Failure: ' + e);
-			}
+			}*/
 		}
 		this.text_changed = true;
 		this.lastwrapwidth = this.width;
@@ -26245,10 +26189,10 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio,
 	cr.plugins_.Browser,
 	cr.plugins_.Function,
-	cr.plugins_.SilverAIMSupport,
+	cr.plugins_.TiledBg,
 	cr.plugins_.Sprite,
 	cr.plugins_.SpriteFontPlus,
-	cr.plugins_.TiledBg,
+	cr.plugins_.SilverAIMSupport,
 	cr.plugins_.Touch,
 	cr.behaviors.Fade,
 	cr.behaviors.Rex_MoveTo,
@@ -26290,7 +26234,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetAnim,
 	cr.plugins_.Sprite.prototype.cnds.OnAnimFinished,
 	cr.plugins_.Sprite.prototype.acts.StartAnim,
-	cr.system_object.prototype.exps.random,
 	cr.system_object.prototype.cnds.Else,
 	cr.plugins_.SpriteFontPlus.prototype.acts.Destroy,
 	cr.system_object.prototype.cnds.Repeat,
@@ -26306,6 +26249,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Arr.prototype.cnds.ArrForEach,
 	cr.plugins_.Arr.prototype.exps.CurValue,
 	cr.system_object.prototype.cnds.IsGroupActive,
+	cr.system_object.prototype.exps.random,
 	cr.plugins_.Arr.prototype.exps.At,
 	cr.plugins_.SpriteFontPlus.prototype.exps.X,
 	cr.system_object.prototype.cnds.EveryTick,
