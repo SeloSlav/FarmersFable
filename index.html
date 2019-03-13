@@ -198,6 +198,7 @@
 			<li id='page2' class="dot-nav--item"><a href="#" class="dot-nav--link">Bob's Story</a></li>
 			<li id='page3' class="dot-nav--item"><a href="#" class="dot-nav--link">Collaboration</a></li>
 			<li id='page4' class="dot-nav--item"><a href="#" class="dot-nav--link">End</a></li>
+			<li id='page5' class="dot-nav--item"><a href="#" class="dot-nav--link">Credit & Futher Reading</a></li>
 		  </ul>
 		</nav>
 	</div>
@@ -233,6 +234,11 @@
 				$( '#page4' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.end;
 			});
+			$('#page5').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page5' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.credit;
+			});
 			$('#sound_btn').click(function(){
 				var _tmp = _sound;
 				if (_tmp){
@@ -263,6 +269,11 @@
 		function gotoPage4(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page4' ).addClass( "is-active" );
+		}
+		
+		function gotoPage5(){
+			$( '.dot-nav--item' ).removeClass( "is-active" );
+			$( '#page5' ).addClass( "is-active" );
 		}
     </script>
 </body> 

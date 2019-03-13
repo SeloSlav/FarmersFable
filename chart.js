@@ -212,6 +212,16 @@ _chart.chart_2.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 99, 132)",
 			borderColor: "rgb(255, 99, 132)",
+		},
+		{
+			label: 'Pool',
+			lineTension: 0,
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(0,0,0)",
+			borderColor: "rgb(0,0,0)",
 		}]
 	},
 	options: {
@@ -281,6 +291,11 @@ _chart.chart_2.update_0 = function(_value){
 
 _chart.chart_2.update_1 = function(_value){
 	_chart.chart_2.config.data.datasets[1].data.push(_value);
+	_chart.chart_2.chart.update();
+}
+
+_chart.chart_2.update_2 = function(_value){
+	_chart.chart_2.config.data.datasets[2].data.push(_value);
 	_chart.chart_2.chart.update();
 }
 
