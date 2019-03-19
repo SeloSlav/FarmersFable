@@ -26254,6 +26254,5 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetInstanceVar,
 	cr.system_object.prototype.exps.newline,
 	cr.plugins_.Arr.prototype.exps.At,
-	cr.plugins_.SpriteFontPlus.prototype.exps.X,
-	cr.system_object.prototype.exps.floor
+	cr.plugins_.SpriteFontPlus.prototype.exps.X
 ];};
