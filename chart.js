@@ -10,6 +10,14 @@ var _chart = {
 	chart_6 : {},
 	chart_7 : {},
 };
+_chart.chart_7.chart = {};
+_chart.chart_6.chart = {};
+_chart.chart_5.chart = {};
+_chart.chart_4.chart = {};
+_chart.chart_3.chart = {};
+_chart.chart_2.chart = {};
+_chart.chart_1.chart = {};
+_chart.chart_0.chart = {};
 
 _chart.chart_0.config = {
 	type: 'line',
@@ -277,8 +285,23 @@ _chart.chart_2.show = function(){
 	ctx.canvas.originalheight = ctx.canvas.height;
 	_chart_2.style.display = 'block';
 	_chart.chart_2.chart = new Chart(ctx, _chart.chart_2.config);
+	checkChart2();
 }
-
+function checkChart2(){
+	window['c2check'] = setInterval(function(){
+		var _chart_2 = document.getElementById('chart_2_container');
+		if (_chart_2.style.top == 0 && _chart_2.style.left == 0){
+			window._placeHolder_1 = document.getElementById('placeHolder_2');
+			_chart_2.style.width = _placeHolder_1.style.width;
+			_chart_2.style.height = _placeHolder_1.style.height;
+			_chart_2.style.top = _placeHolder_1.style.top;
+			_chart_2.style.left = _placeHolder_1.style.left;
+			_chart_2.style.zIndex = "999";
+		} else {
+			clearInterval(window['c2check']);
+		}
+	},100);
+}
 _chart.chart_2.update_0 = function(_value){
 	if ( _chart.chart_2.config.data.datasets[0].data.length < 5) {
 		_chart.chart_2.config.data.datasets[0].data.push(_value);
