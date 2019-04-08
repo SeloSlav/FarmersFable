@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1554336664,
+	"version": 1554758965,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -12,7 +12,7 @@
 		"images/bob-sheet0.png",
 		"images/bob-sheet1.png",
 		"images/bob-sheet2.png",
-		"images/text_col_2.png",
+		"images/text_multiplier.png",
 		"images/rice-sheet0.png",
 		"images/040field-sheet0.png",
 		"images/040field-sheet1.png",
@@ -75,6 +75,7 @@
 		"images/bill_col_2-sheet0.png",
 		"images/bill_col_2-sheet1.png",
 		"images/rice_ann-sheet0.png",
+		"images/more_rain2-sheet0.png",
 		"media/backgroundambients.m4a",
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
