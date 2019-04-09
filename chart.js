@@ -420,6 +420,11 @@ _chart.chart_3.update_1 = function(_value){
 	_chart.chart_3.chart.update();
 }
 
+_chart.chart_3.update_2 = function(_value){
+	_chart.chart_3.config.data.datasets[2].data.push(_value);
+	_chart.chart_3.chart.update();
+}
+
 _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
