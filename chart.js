@@ -397,14 +397,14 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: 1000000000000, //maximum tick
+			         max: 1000000, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
 			    },
 			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
 			        chartObj.ticks = [];
-			        chartObj.ticks.push(0.1);
+			        chartObj.ticks.push(0);
 			        chartObj.ticks.push(1);
 			        chartObj.ticks.push(10);
 			        chartObj.ticks.push(100);
