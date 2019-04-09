@@ -14,7 +14,7 @@ var _chart = {
 _chart.chart_0.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 		lineTension: 0,
 		label: 'Bill',
@@ -84,13 +84,13 @@ _chart.chart_0.update = function(_value){
 		_chart.chart_0.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_0.config.data.datasets[0].data.push(_value);
-		_chart.chart_0.config.data.labels.push("Year "+(parseInt(_chart.chart_0.config.data.datasets[0].data.length)));
+		_chart.chart_0.config.data.labels.push("Harvest "+(parseInt(_chart.chart_0.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_0.chart.update();
 }
 
 _chart.chart_0.reset = function(_value){
-	_chart.chart_0.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
+	_chart.chart_0.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_0.config.data.datasets[0].data = [];
 	_chart.chart_0.chart.update();
 }
@@ -104,7 +104,7 @@ _chart.chart_0.hide = function(_value){
 _chart.chart_1.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'],
 		datasets: [{
 		lineTension: 0,
 		label: 'Bill',
@@ -174,7 +174,7 @@ _chart.chart_1.update = function(_value){
 		_chart.chart_1.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_1.config.data.datasets[0].data.push(_value);
-		_chart.chart_1.config.data.labels.push("Year "+(parseInt(_chart.chart_1.config.data.datasets[0].data.length)));
+		_chart.chart_1.config.data.labels.push("Harvest "+(parseInt(_chart.chart_1.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_1.chart.update();
 }
@@ -182,7 +182,7 @@ _chart.chart_1.update = function(_value){
 _chart.chart_1.reset = function(){
 	_chart.chart_1.config.data.datasets[0].data = [];
 	_chart.chart_1.chart.update();
-	_chart.chart_1.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
+	_chart.chart_1.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 }
 
 _chart.chart_1.hide = function(_value){
@@ -193,7 +193,7 @@ _chart.chart_1.hide = function(_value){
 _chart.chart_2.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
 			label: 'Bill',
@@ -284,7 +284,7 @@ _chart.chart_2.update_0 = function(_value){
 		_chart.chart_2.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_2.config.data.datasets[0].data.push(_value);
-		_chart.chart_2.config.data.labels.push("Year "+(parseInt(_chart.chart_2.config.data.datasets[0].data.length)));
+		_chart.chart_2.config.data.labels.push("Harvest "+(parseInt(_chart.chart_2.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_2.chart.update();
 }
@@ -300,7 +300,7 @@ _chart.chart_2.update_2 = function(_value){
 }
 
 _chart.chart_2.reset = function(_value){
-	_chart.chart_2.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
+	_chart.chart_2.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_2.config.data.datasets[0].data = [];
 	_chart.chart_2.config.data.datasets[1].data = [];
 	_chart.chart_2.chart.update();
@@ -314,7 +314,7 @@ _chart.chart_2.hide = function(_value){
 _chart.chart_3.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
 			label: 'Bill',
@@ -348,10 +348,10 @@ _chart.chart_3.config = {
 	},
 	options: {
 		responsive: true,
-		title: {
+		/*title: {
 			display: true,
 			text: 'Not Sharing'
-		},
+		},*/
 		tooltips: {
 			mode: 'index',
 			intersect: false,
@@ -410,7 +410,7 @@ _chart.chart_3.update_0 = function(_value){
 		_chart.chart_3.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_3.config.data.datasets[0].data.push(_value);
-		_chart.chart_3.config.data.labels.push("Year "+(parseInt(_chart.chart_3.config.data.datasets[0].data.length)));
+		_chart.chart_3.config.data.labels.push("Harvest "+(parseInt(_chart.chart_3.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_3.chart.update();
 }
@@ -426,8 +426,10 @@ _chart.chart_3.update_2 = function(_value){
 }
 
 _chart.chart_3.reset = function(_value){
-	_chart.chart_3.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
+	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
+	_chart.chart_2.config.data.datasets[1].data = [];
+	_chart.chart_2.config.data.datasets[2].data = [];
 	_chart.chart_3.chart.update();
 }
 
@@ -439,7 +441,7 @@ _chart.chart_3.hide = function(_value){
 _chart.chart_4.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
 			label: 'Bill & Ann',
@@ -515,13 +517,13 @@ _chart.chart_4.update = function(_value){
 		_chart.chart_4.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_4.config.data.datasets[0].data.push(_value);
-		_chart.chart_4.config.data.labels.push("Year "+(parseInt(_chart.chart_4.config.data.datasets[0].data.length)));
+		_chart.chart_4.config.data.labels.push("Harvest "+(parseInt(_chart.chart_4.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_4.chart.update();
 }
 
 _chart.chart_4.reset = function(_value){
-	_chart.chart_4.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
+	_chart.chart_4.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_4.config.data.datasets[0].data = [];
 	_chart.chart_4.chart.update();
 }
@@ -534,10 +536,10 @@ _chart.chart_4.hide = function(_value){
 _chart.chart_5.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill 10 Years',
+		label: 'Bill 10 Harvests',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -604,13 +606,13 @@ _chart.chart_5.update = function(_value){
 		_chart.chart_5.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_5.config.data.datasets[0].data.push(_value);
-		_chart.chart_5.config.data.labels.push("Year "+(parseInt(_chart.chart_5.config.data.datasets[0].data.length)));
+		_chart.chart_5.config.data.labels.push("Harvest "+(parseInt(_chart.chart_5.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_5.chart.update();
 }
 
 _chart.chart_5.reset = function(_value){
-	_chart.chart_5.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'];
+	_chart.chart_5.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_5.config.data.datasets[0].data = [];
 	_chart.chart_5.chart.update();
 }
@@ -623,7 +625,7 @@ _chart.chart_5.hide = function(_value){
 _chart.chart_6.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4'],
 		datasets: [{
 		lineTension: 0,
 		label: 'Bill',
@@ -693,13 +695,13 @@ _chart.chart_6.update = function(_value){
 		_chart.chart_6.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_6.config.data.datasets[0].data.push(_value);
-		_chart.chart_6.config.data.labels.push("Year "+(parseInt(_chart.chart_6.config.data.datasets[0].data.length)));
+		_chart.chart_6.config.data.labels.push("Harvest "+(parseInt(_chart.chart_6.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_6.chart.update();
 }
 
 _chart.chart_6.reset = function(_value){
-	_chart.chart_6.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4'];
+	_chart.chart_6.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4'];
 	_chart.chart_6.config.data.datasets[0].data = [];
 	_chart.chart_6.chart.update();
 }
@@ -713,7 +715,7 @@ _chart.chart_6.hide = function(_value){
 _chart.chart_7.config = {
 	type: 'line',
 	data: {
-		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5' ,'Year 6' ,'Year 7' ,'Year 8' ,'Year 9' ,'Year 10' ],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ,'Harvest 6' ,'Harvest 7' ,'Harvest 8' ,'Harvest 9' ,'Harvest 10' ],
 		datasets: [{
 			label: 'Bill',
 			lineTension: 0,
@@ -829,7 +831,7 @@ _chart.chart_7.update_0 = function(_value){
 		_chart.chart_7.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_7.config.data.datasets[0].data.push(_value);
-		_chart.chart_7.config.data.labels.push("Year "+(parseInt(_chart.chart_7.config.data.datasets[0].data.length)));
+		_chart.chart_7.config.data.labels.push("Harvest "+(parseInt(_chart.chart_7.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_7.chart.update();
 }
@@ -855,7 +857,7 @@ _chart.chart_7.update_4 = function(_value){
 }
 
 _chart.chart_7.reset = function(_value){
-	_chart.chart_7.config.data.labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5' ,'Year 6' ,'Year 7' ,'Year 8' ,'Year 9' ,'Year 10' ];
+	_chart.chart_7.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ,'Harvest 6' ,'Harvest 7' ,'Harvest 8' ,'Harvest 9' ,'Harvest 10' ];
 	_chart.chart_7.config.data.datasets[0].data = [];
 	_chart.chart_7.config.data.datasets[1].data = [];
 	_chart.chart_7.config.data.datasets[2].data = [];
