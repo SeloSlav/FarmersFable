@@ -334,13 +334,43 @@ _chart.chart_3.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 99, 132)",
 			borderColor: "rgb(255, 99, 132)",
+		},
+		{
+			lineTension: 0,
+			label: 'Bill',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(54, 162, 235)",
+			borderColor: "rgb(54, 162, 235)",
+		},
+		{
+			lineTension: 0,
+			label: 'Ann (Sharing)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(255, 99, 132)",
+			borderColor: "rgb(255, 99, 132)",
+		},
+		{
+			lineTension: 0,
+			label: 'Pool (Sharing)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(128,36,171)",
+			borderColor: "rgb(128,36,171)",
 		}]
 	},
 	options: {
 		responsive: true,
 		title: {
 			display: true,
-			text: 'Not Cooperating'
+			text: ''
 		},
 		tooltips: {
 			mode: 'index',
@@ -358,6 +388,29 @@ _chart.chart_3.config = {
 				}
 			}],
 			yAxes: [{
+			    scaleLabel: {
+			        display: true,
+			        labelString: 'LABEL',
+			    },
+			    type: 'logarithmic',
+			    position: 'left',
+			    ticks: {
+			         min: 0.1, //minimum tick
+			         max: 1000, //maximum tick
+			         callback: function (value, index, values) {
+			             return Number(value.toString());//pass tick values as a string into Number function
+			         }
+			    },
+			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
+			        chartObj.ticks = [];
+			        chartObj.ticks.push(0.1);
+			        chartObj.ticks.push(1);
+			        chartObj.ticks.push(10);
+			        chartObj.ticks.push(100);
+			        chartObj.ticks.push(1000);
+			    }
+			}]
+			/*yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
@@ -372,7 +425,7 @@ _chart.chart_3.config = {
 						else return parseFloat(label).toFixed(1) + " Kg";
 					}
 				}
-			}]
+			}]*/
 		}
 	}
 };
@@ -410,10 +463,31 @@ _chart.chart_3.update_1 = function(_value){
 	_chart.chart_3.chart.update();
 }
 
+_chart.chart_3.update_2 = function(_value){
+	_chart.chart_3.config.data.datasets[2].data.push(_value);
+	_chart.chart_3.chart.update();
+}
+
+
+_chart.chart_3.update_3 = function(_value){
+	_chart.chart_3.config.data.datasets[3].data.push(_value);
+	_chart.chart_3.chart.update();
+}
+
+
+_chart.chart_3.update_4 = function(_value){
+	_chart.chart_3.config.data.datasets[4].data.push(_value);
+	_chart.chart_3.chart.update();
+}
+
+
 _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
 	_chart.chart_2.config.data.datasets[1].data = [];
+	_chart.chart_2.config.data.datasets[2].data = [];
+	_chart.chart_2.config.data.datasets[3].data = [];
+	_chart.chart_2.config.data.datasets[4].data = [];
 	_chart.chart_3.chart.update();
 }
 
