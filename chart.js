@@ -341,9 +341,9 @@ _chart.chart_3.config = {
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(54, 162, 235)",
-			borderColor: "rgb(54, 162, 235)",
+			strokeColor : "rgb(4, 0, 255)",
+			backgroundColor: "rgb(4, 0, 255)",
+			borderColor: "rgb(4, 0, 255)",
 		},
 		{
 			lineTension: 0,
@@ -351,9 +351,9 @@ _chart.chart_3.config = {
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 99, 132)",
-			borderColor: "rgb(255, 99, 132)",
+			strokeColor : "rgb(255, 0, 0)",
+			backgroundColor: "rgb(255, 0, 0)",
+			borderColor: "rgb(255, 0, 0)",
 		},
 		{
 			lineTension: 0,
@@ -396,7 +396,7 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0.1, //minimum tick
-			         max: 1000, //maximum tick
+			         max: 1000000, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString());//pass tick values as a string into Number function
 			         }
@@ -408,6 +408,9 @@ _chart.chart_3.config = {
 			        chartObj.ticks.push(10);
 			        chartObj.ticks.push(100);
 			        chartObj.ticks.push(1000);
+			        chartObj.ticks.push(10000);
+			        chartObj.ticks.push(100000);
+			        chartObj.ticks.push(1000000);
 			    }
 			}]
 			/*yAxes: [{
