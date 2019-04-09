@@ -373,6 +373,7 @@ _chart.chart_3.config = {
 			text: ''
 		},
 		tooltips: {
+			enabled: false,
 			mode: 'index',
 			intersect: false,
 		},
@@ -395,10 +396,10 @@ _chart.chart_3.config = {
 			    type: 'logarithmic',
 			    position: 'left',
 			    ticks: {
-			         min: 0.1, //minimum tick
-			         max: 1000000, //maximum tick
+			         min: 0, //minimum tick
+			         max: getMax(), //maximum tick
 			         callback: function (value, index, values) {
-			             return Number(value.toString());//pass tick values as a string into Number function
+			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
 			    },
 			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
@@ -432,6 +433,16 @@ _chart.chart_3.config = {
 		}
 	}
 };
+
+function getMax(){
+    var max = 0;
+    dataSets.forEach(function(x, i){        
+        max = Math.max(max, Math.max.apply(null, x.data));
+    });
+
+    return max + 2;
+}
+
 _chart.chart_3.show = function(){
 	var _chart_3 = document.getElementById('chart_3_container');
 	
