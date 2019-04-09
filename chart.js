@@ -17,7 +17,7 @@ _chart.chart_0.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill',
+		label: 'Bob',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -107,7 +107,7 @@ _chart.chart_1.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill',
+		label: 'Bob',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -196,7 +196,7 @@ _chart.chart_2.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill',
+			label: 'Bob',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -205,7 +205,7 @@ _chart.chart_2.config = {
 			borderColor: "rgb(54, 162, 235)",
 		},
 		{
-			label: 'Ann',
+			label: 'Steve',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -317,7 +317,7 @@ _chart.chart_3.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill',
+			label: 'Bob',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -326,7 +326,7 @@ _chart.chart_3.config = {
 			borderColor: "rgb(54, 162, 235)",
 		},
 		{
-			label: 'Ann',
+			label: 'Steve',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -426,7 +426,7 @@ _chart.chart_4.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4','Year 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill & Ann',
+			label: 'Bob & Steve',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -521,7 +521,7 @@ _chart.chart_5.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill 10 Years',
+		label: 'Bob 10 Years',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -610,7 +610,7 @@ _chart.chart_6.config = {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill',
+		label: 'Bob',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -699,7 +699,7 @@ _chart.chart_7.config = {
 	data: {
 		labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4' , 'Year 5' ,'Year 6' ,'Year 7' ,'Year 8' ,'Year 9' ,'Year 10' ],
 		datasets: [{
-			label: 'Bill',
+			label: 'Bob',
 			lineTension: 0,
 			data: [],
 			fill: false,
@@ -709,7 +709,7 @@ _chart.chart_7.config = {
 			borderColor: "rgb(54, 162, 235)",
 		},
 		{
-			label: 'Ann',
+			label: 'Steve',
 			lineTension: 0,
 			data: [],
 			fill: false,
@@ -719,7 +719,7 @@ _chart.chart_7.config = {
 			borderColor: "rgb(255, 99, 132)",
 		},
 		{
-			label: 'Carl',
+			label: 'Mike',
 			lineTension: 0,
 			data: [],
 			fill: false,
@@ -729,7 +729,7 @@ _chart.chart_7.config = {
 			borderColor: "rgb(230, 230, 250)",
 		},
 		{
-			label: 'Dana',
+			label: 'John',
 			lineTension: 0,
 			data: [],
 			fill: false,
