@@ -448,7 +448,7 @@ _chart.chart_4.config = {
 		},
 		{
 			lineTension: 0,
-			label: 'Bill & Ann',
+			label: 'Pool',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
