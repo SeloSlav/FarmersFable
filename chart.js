@@ -326,6 +326,7 @@ _chart.chart_3.config = {
 			borderColor: "rgb(54, 162, 235)",
 		},
 		{
+			lineTension: 0,
 			label: 'Ann',
 			data: [],
 			fill: false,
@@ -333,6 +334,16 @@ _chart.chart_3.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 99, 132)",
 			borderColor: "rgb(255, 99, 132)",
+		},
+		{
+			lineTension: 0,
+			label: 'Bill & Ann',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(128,36,171)",
+			borderColor: "rgb(128,36,171)",
 		}]
 	},
 	options: {
