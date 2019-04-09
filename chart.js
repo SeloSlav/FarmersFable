@@ -414,7 +414,6 @@ _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
 	_chart.chart_2.config.data.datasets[1].data = [];
-	_chart.chart_2.config.data.datasets[2].data = [];
 	_chart.chart_3.chart.update();
 }
 
@@ -540,6 +539,8 @@ _chart.chart_4.update_2 = function(_value){
 _chart.chart_4.reset = function(_value){
 	_chart.chart_4.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_4.config.data.datasets[0].data = [];
+	_chart.chart_4.config.data.datasets[1].data = [];
+	_chart.chart_4.config.data.datasets[2].data = [];
 	_chart.chart_4.chart.update();
 }
 
