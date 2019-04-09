@@ -334,24 +334,14 @@ _chart.chart_3.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 99, 132)",
 			borderColor: "rgb(255, 99, 132)",
-		},
-		{
-			lineTension: 0,
-			label: 'Bill & Ann',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(128,36,171)",
-			borderColor: "rgb(128,36,171)",
 		}]
 	},
 	options: {
 		responsive: true,
-		/*title: {
+		title: {
 			display: true,
-			text: 'Not Sharing'
-		},*/
+			text: 'Not Cooperating'
+		},
 		tooltips: {
 			mode: 'index',
 			intersect: false,
@@ -420,11 +410,6 @@ _chart.chart_3.update_1 = function(_value){
 	_chart.chart_3.chart.update();
 }
 
-_chart.chart_3.update_2 = function(_value){
-	_chart.chart_3.config.data.datasets[2].data.push(_value);
-	_chart.chart_3.chart.update();
-}
-
 _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
@@ -444,20 +429,40 @@ _chart.chart_4.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill & Ann',
+			label: 'Bill',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(54, 162, 235)",
 			borderColor: "rgb(54, 162, 235)",
+		},
+		{
+			lineTension: 0,
+			label: 'Ann',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(255, 99, 132)",
+			borderColor: "rgb(255, 99, 132)",
+		},
+		{
+			lineTension: 0,
+			label: 'Bill & Ann',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(128,36,171)",
+			borderColor: "rgb(128,36,171)",
 		}]
 	},
 	options: {
 		responsive: true,
 		title: {
 			display: true,
-			text: 'With Sharing'
+			text: 'Pooling & Sharing'
 		},
 		tooltips: {
 			mode: 'index',
@@ -512,13 +517,23 @@ _chart.chart_4.show = function(){
 	_chart.chart_4.chart = new Chart(ctx, _chart.chart_4.config);
 }
 
-_chart.chart_4.update = function(_value){
+_chart.chart_4.update_0 = function(_value){
 	if ( _chart.chart_4.config.data.datasets[0].data.length < 5) {
 		_chart.chart_4.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_4.config.data.datasets[0].data.push(_value);
 		_chart.chart_4.config.data.labels.push("Harvest "+(parseInt(_chart.chart_4.config.data.datasets[0].data.length)));
 	}
+	_chart.chart_4.chart.update();
+}
+
+_chart.chart_4.update_1 = function(_value){
+	_chart.chart_4.config.data.datasets[1].data.push(_value);
+	_chart.chart_4.chart.update();
+}
+
+_chart.chart_4.update_2 = function(_value){
+	_chart.chart_4.config.data.datasets[2].data.push(_value);
 	_chart.chart_4.chart.update();
 }
 
@@ -539,7 +554,7 @@ _chart.chart_5.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill 10 Harvests',
+		label: 'Bill',
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -771,7 +786,7 @@ _chart.chart_7.config = {
 		responsive: true,
 		title: {
 			display: false,
-			text: 'Not Sharing'
+			text: ''
 		},
 		tooltips: {
 			mode: 'index',
