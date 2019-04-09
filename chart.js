@@ -842,8 +842,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(230, 230, 250)",
-			borderColor: "rgb(230, 230, 250)",
+			backgroundColor: "rgb(255, 188, 94)",
+			borderColor: "rgb(255, 188, 94)",
 		},
 		{
 			label: 'Dana',
@@ -856,14 +856,54 @@ _chart.chart_7.config = {
 			borderColor: "rgb(34,139,34)",
 		},
 		{
+			label: 'Bill (Sharing)',
+			lineTension: 0,
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(4, 0, 255)",
+			borderColor: "rgb(4, 0, 255)",
+		},
+		{
+			label: 'Ann (Sharing)',
+			lineTension: 0,
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(255, 0, 0)",
+			borderColor: "rgb(255, 0, 0)",
+		},
+		{
+			label: 'Carl (Sharing)',
+			lineTension: 0,
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(255, 148, 0)",
+			borderColor: "rgb(255, 148, 0)",
+		},
+		{
+			label: 'Dana (Sharing)',
+			lineTension: 0,
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(0, 130, 0)",
+			borderColor: "rgb(0, 130, 0)",
+		},
+		{
 			label: 'Pool',
 			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(0,0,0)",
-			borderColor: "rgb(0,0,0)",
+			backgroundColor: "rgb(128,36,171)",
+			borderColor: "rgb(128,36,171)",
 		}]
 	},
 	options: {
@@ -955,6 +995,26 @@ _chart.chart_7.update_4 = function(_value){
 	_chart.chart_7.chart.update();
 }
 
+_chart.chart_7.update_5 = function(_value){
+	_chart.chart_7.config.data.datasets[5].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_6 = function(_value){
+	_chart.chart_7.config.data.datasets[6].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_7 = function(_value){
+	_chart.chart_7.config.data.datasets[7].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
+_chart.chart_7.update_8 = function(_value){
+	_chart.chart_7.config.data.datasets[8].data.push(_value);
+	_chart.chart_7.chart.update();
+}
+
 _chart.chart_7.reset = function(_value){
 	_chart.chart_7.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ,'Harvest 6' ,'Harvest 7' ,'Harvest 8' ,'Harvest 9' ,'Harvest 10' ];
 	_chart.chart_7.config.data.datasets[0].data = [];
@@ -962,6 +1022,10 @@ _chart.chart_7.reset = function(_value){
 	_chart.chart_7.config.data.datasets[2].data = [];
 	_chart.chart_7.config.data.datasets[3].data = [];
 	_chart.chart_7.config.data.datasets[4].data = [];
+	_chart.chart_7.config.data.datasets[5].data = [];
+	_chart.chart_7.config.data.datasets[6].data = [];
+	_chart.chart_7.config.data.datasets[7].data = [];
+	_chart.chart_7.config.data.datasets[8].data = [];
 	_chart.chart_7.chart.update();
 }
 
