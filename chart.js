@@ -401,7 +401,7 @@ _chart.chart_3.config = {
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
-			    }/*,
+			    },
 			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
 			        chartObj.ticks = [];
 			        chartObj.ticks.push(0);
@@ -413,7 +413,7 @@ _chart.chart_3.config = {
 			        chartObj.ticks.push(100000);
 			        chartObj.ticks.push(1000000);
 			    }
-			}*/]
+			}]
 			/*yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
