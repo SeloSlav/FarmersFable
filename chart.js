@@ -373,6 +373,7 @@ _chart.chart_3.config = {
 			text: ''
 		},
 		tooltips: {
+			enabled: false,
 			mode: 'index',
 			intersect: false,
 		},
@@ -490,10 +491,10 @@ _chart.chart_3.update_4 = function(_value){
 _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
-	_chart.chart_2.config.data.datasets[1].data = [];
-	_chart.chart_2.config.data.datasets[2].data = [];
-	_chart.chart_2.config.data.datasets[3].data = [];
-	_chart.chart_2.config.data.datasets[4].data = [];
+	_chart.chart_3.config.data.datasets[1].data = [];
+	_chart.chart_3.config.data.datasets[2].data = [];
+	_chart.chart_3.config.data.datasets[3].data = [];
+	_chart.chart_3.config.data.datasets[4].data = [];
 	_chart.chart_3.chart.update();
 }
 
