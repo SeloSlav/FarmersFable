@@ -391,17 +391,17 @@ _chart.chart_3.config = {
 			yAxes: [{
 			    scaleLabel: {
 			        display: true,
-			        labelString: 'LABEL',
+			        labelString: 'KG',
 			    },
 			    type: 'logarithmic',
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: 1000000, //maximum tick
+			         max: Math.max.apply(this, datasets) + 1000, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
-			    },
+			    }/*,
 			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
 			        chartObj.ticks = [];
 			        chartObj.ticks.push(0);
@@ -413,7 +413,7 @@ _chart.chart_3.config = {
 			        chartObj.ticks.push(100000);
 			        chartObj.ticks.push(1000000);
 			    }
-			}]
+			}*/]
 			/*yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
@@ -495,7 +495,7 @@ _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.datasets[2].data = [];
 	_chart.chart_3.config.data.datasets[3].data = [];
 	_chart.chart_3.config.data.datasets[4].data = [];
-	_chart.chart_3.chart.update();
+	_chart.chart_3.chart.update();	
 }
 
 _chart.chart_3.hide = function(_value){
