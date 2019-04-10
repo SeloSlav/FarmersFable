@@ -547,6 +547,7 @@ _chart.chart_4.config = {
 			text: 'Pooling & Sharing'
 		},
 		tooltips: {
+			enabled: false,
 			mode: 'index',
 			intersect: false,
 		},
