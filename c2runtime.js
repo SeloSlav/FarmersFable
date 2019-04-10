@@ -27067,6 +27067,7 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.SetGroupActive,
 	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.plugins_.SpriteFontPlus.prototype.acts.SetText,
+	cr.system_object.prototype.exps.round,
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
