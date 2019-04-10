@@ -648,6 +648,7 @@ _chart.chart_5.config = {
 	options: {
 		responsive: true,
 		tooltips: {
+			enabled: false,
 			mode: 'index',
 			intersect: false,
 		},
