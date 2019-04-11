@@ -915,6 +915,7 @@ _chart.chart_7.config = {
 			text: ''
 		},
 		tooltips: {
+			enabled: false,
 			mode: 'index',
 			intersect: false,
 		},
