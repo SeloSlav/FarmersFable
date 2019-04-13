@@ -357,7 +357,7 @@ _chart.chart_3.config = {
 		},
 		{
 			lineTension: 0,
-			label: 'Sum of Cooperators',
+			label: 'Pool',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -908,7 +908,7 @@ _chart.chart_7.config = {
 			borderColor: "rgb(128,36,171)",
 		}]
 	},
-	options: {c
+	options: {
 		responsive: true,
 		title: {
 			display: false,
