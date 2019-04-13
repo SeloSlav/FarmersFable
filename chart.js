@@ -824,8 +824,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(54, 162, 235)",
-			borderColor: "rgb(54, 162, 235)",
+			backgroundColor: "rgb(192,192,192)",
+			borderColor: "rgb(192,192,192)",
 		},
 		{
 			label: 'Ann',
@@ -834,8 +834,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 99, 132)",
-			borderColor: "rgb(255, 99, 132)",
+			backgroundColor: "rgb(192,192,192)",
+			borderColor: "rgb(192,192,192)",
 		},
 		{
 			label: 'Carl',
@@ -844,8 +844,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 188, 94)",
-			borderColor: "rgb(255, 188, 94)",
+			backgroundColor: "rgb(192,192,192)",
+			borderColor: "rgb(192,192,192)",
 		},
 		{
 			label: 'Dana',
@@ -854,8 +854,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(34,139,34)",
-			borderColor: "rgb(34,139,34)",
+			backgroundColor: "rgb(192,192,192)",
+			borderColor: "rgb(192,192,192)",
 		},
 		{
 			label: 'Bill (Sharing)',
@@ -864,8 +864,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(4, 0, 255)",
-			borderColor: "rgb(4, 0, 255)",
+			backgroundColor: "rgb(152,251,152)",
+			borderColor: "rgb(152,251,152)",
 		},
 		{
 			label: 'Ann (Sharing)',
@@ -874,8 +874,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 0, 0)",
-			borderColor: "rgb(255, 0, 0)",
+			backgroundColor: "rgb(152,251,152)",
+			borderColor: "rgb(152,251,152)",
 		},
 		{
 			label: 'Carl (Sharing)',
@@ -884,8 +884,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 148, 0)",
-			borderColor: "rgb(255, 148, 0)",
+			backgroundColor: "rgb(152,251,152)",
+			borderColor: "rgb(152,251,152)",
 		},
 		{
 			label: 'Dana (Sharing)',
@@ -894,8 +894,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(0, 130, 0)",
-			borderColor: "rgb(0, 130, 0)",
+			backgroundColor: "rgb(152,251,152)",
+			borderColor: "rgb(152,251,152)",
 		},
 		{
 			label: 'Pool',
@@ -904,8 +904,8 @@ _chart.chart_7.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(128,36,171)",
-			borderColor: "rgb(128,36,171)",
+			backgroundColor: "rgb(34,139,34)",
+			borderColor: "rgb(34,139,34)",
 		}]
 	},
 	options: {
