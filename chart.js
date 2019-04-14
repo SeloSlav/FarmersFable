@@ -397,7 +397,7 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: Math.ceil((data * 10)/ 10) * 1, //maximum tick
+			         max: Math.ceil((values * 10)/ 10) * 10, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
