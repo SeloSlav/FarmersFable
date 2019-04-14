@@ -407,9 +407,8 @@ _chart.chart_3.config = {
 	}
 };
 
-new Max = function(values) {
-	max = Math.max(values) * 1.2
-	return Number(max.toString())
+new Max = function(data) {
+	return Math.ceil((data * 10)/ 10) * 1
 }
 
 
