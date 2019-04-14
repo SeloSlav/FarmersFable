@@ -397,7 +397,7 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: 1 + "0".repeat(Math.max(...datasets).toString().length), //maximum tick
+			         max: 10000000000, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
@@ -916,7 +916,7 @@ _chart.chart_7.config = {
 			}],
 			yAxes: [{
 			    scaleLabel: {
-			        display: true,
+			        display: true,	
 			        labelString: 'KG',
 			    },
 			    type: 'logarithmic',
