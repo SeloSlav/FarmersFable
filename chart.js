@@ -407,7 +407,7 @@ _chart.chart_3.config = {
 	}
 };
 
-new Max = function(data) {
+function newMax(data) {
 	return Math.ceil((data * 10)/ 10) * 1
 }
 
