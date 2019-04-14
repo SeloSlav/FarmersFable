@@ -397,31 +397,20 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: 100000000, //maximum tick
+			         max: newMax(values), //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
 			    }
 			}]
-			/*yAxes: [{
-				display: true,
-				scaleLabel: { labelString: [] },
-				ticks: {
-					min: 0,
-					callback: function(label, index, labels) {
-						console.log(label);
-						
-						if ((label >= 1000) && (label < 1000000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
-					}
-				}
-			}]*/
 		}
 	}
 };
+
+new Max = function(values) {
+	max = Math.max(values) * 1.2
+	return Number(max.toString())
+}
 
 
 
