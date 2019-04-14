@@ -422,6 +422,12 @@ _chart.chart_3.config = {
 	}
 };
 
+function newMax(datasets) {
+    const max = Math.max(datasets).toString();
+    const newMax = 1 + "0".repeat(max.length);
+    return newMax;
+}
+
 _chart.chart_3.show = function(){
 	var _chart_3 = document.getElementById('chart_3_container');
 	
