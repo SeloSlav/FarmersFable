@@ -938,24 +938,14 @@ _chart.chart_7.config = {
 			    type: 'logarithmic',
 			    position: 'left',
 			    ticks: {
+			    	 autoskip: true,
 			         min: 0, //minimum tick
-			         max: 100000000, //maximum tick
+			         max: 1000000000, //maximum tick
 			         callback: function (value, index, values) {
-			             return Number(value.toString()); //pass tick values as a string into Number function
-			         }
-			    },
-			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
-			        chartObj.ticks = [];
-			        chartObj.ticks.push(0);
-			        chartObj.ticks.push(1);
-			        chartObj.ticks.push(10);
-			        chartObj.ticks.push(100);
-			        chartObj.ticks.push(1000);
-			        chartObj.ticks.push(10000);
-			        chartObj.ticks.push(100000);
-			        chartObj.ticks.push(1000000);
-			        chartObj.ticks.push(10000000);
-			        chartObj.ticks.push(100000000);
+                            if( value==10 || value==100 || value==1000 || value==10000 || value==100000 || value==1000000 || value==10000000|| value==100000000){
+                                return value + ' years';
+                            }
+                        }
 			    }
 			}]
 		}
