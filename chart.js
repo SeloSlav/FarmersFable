@@ -937,16 +937,29 @@ _chart.chart_7.config = {
 			    },
 			    type: 'logarithmic',
 			    position: 'left',
-			    ticks: {
-			    	 autoskip: true,
-			         min: 0, //minimum tick
-			         max: 1000000000, //maximum tick
-			         callback: function (value, index, values) {
-                            if( value==10 || value==100 || value==1000 || value==10000 || value==100000 || value==1000000 || value==10000000|| value==100000000){
-                                return value + ' years';
-                            }
-                        }
-			    }
+	  			ticks: {
+			    	beginAtZero: true,
+				    min: 0,
+				    callback: function(tick, index, ticks){
+				      return tick.toLocaleString();
+			    	},
+				  },
+			  	afterBuildTicks: function(chart){
+				    var maxTicks = 20;
+				    var maxLog = Math.log(chart.ticks[0]);
+				    var minLogDensity = maxLog / maxTicks;
+
+				    var ticks = [];
+				    var currLog = -Infinity;
+				    _.each(chart.ticks.reverse(), function(tick){
+				      var log = Math.max(0, Math.log(tick));
+				      if (log - currLog > minLogDensity){
+				        ticks.push(tick);
+				        currLog = log;
+				      }
+				    });
+				    chart.ticks = ticks;
+			  	}
 			}]
 		}
 	}
