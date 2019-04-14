@@ -397,7 +397,7 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: Math.ceil((values * 10)/ 10) * 10, //maximum tick
+			         max: newMax(max), //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
@@ -406,6 +406,10 @@ _chart.chart_3.config = {
 		}
 	}
 };
+
+function newMax(max) {
+	return Math.ceil((Math.max(max)) / 10) * 100
+}
 
 _chart.chart_3.show = function(){
 	var _chart_3 = document.getElementById('chart_3_container');
