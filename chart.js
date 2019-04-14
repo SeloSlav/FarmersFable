@@ -397,19 +397,30 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: newMax(max), //maximum tick
+			         max: 10000000000, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
+			    },
+			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
+			        chartObj.ticks = [];
+			        chartObj.ticks.push(0);
+			        chartObj.ticks.push(1);
+			        chartObj.ticks.push(10);
+			        chartObj.ticks.push(100);
+			        chartObj.ticks.push(1000);
+			        chartObj.ticks.push(10000);
+			        chartObj.ticks.push(100000);
+			        chartObj.ticks.push(1000000);
+			        chartObj.ticks.push(10000000);
+			        chartObj.ticks.push(100000000);
+			        chartObj.ticks.push(1000000000);
+			        chartObj.ticks.push(10000000000);
 			    }
 			}]
 		}
 	}
 };
-
-function newMax(max) {
-	return Math.ceil((Math.max(max)) / 10) * 100
-}
 
 _chart.chart_3.show = function(){
 	var _chart_3 = document.getElementById('chart_3_container');
