@@ -27071,6 +27071,5 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
-	cr.plugins_.Audio.prototype.acts.SetSilent,
-	cr.behaviors.Fade.prototype.acts.SetFadeInTime
+	cr.plugins_.Audio.prototype.acts.SetSilent
 ];};
