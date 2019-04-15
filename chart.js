@@ -409,7 +409,7 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: 10000000000, //maximum tick
+			         max: newMax(datasets), //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
@@ -435,10 +435,16 @@ _chart.chart_3.config = {
 };
 
 function newMax(datasets) {
-    const max = Math.max(datasets).toString();
-    const newMax = 1 + "0".repeat(max.length);
-    return newMax;
+  // join all the dataset values together into one array to easily find the max
+  const merged = datasets.reduce((acc, cur) => {
+    acc.push(...cur.data);
+    return acc;
+  }, []);
+
+  const max = Math.max(...merged).toString();
+  return `1${  '0'.repeat(max.length)}`;
 }
+
 
 _chart.chart_3.show = function(){
 	var _chart_3 = document.getElementById('chart_3_container');
