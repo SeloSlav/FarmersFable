@@ -409,7 +409,7 @@ _chart.chart_3.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: newMax(datasets), //maximum tick
+			         max: newMax(_chart.chart_3.config.data.datasets), //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
