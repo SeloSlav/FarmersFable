@@ -464,8 +464,8 @@ _chart.chart_4.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(192,192,192)",
-			borderColor: "rgb(192,192,192)",
+			backgroundColor: "(127,255,212)",
+			borderColor: "(127,255,212)",
 		},
 		{
 			label: 'Ann',
@@ -474,8 +474,8 @@ _chart.chart_4.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(192,192,192)",
-			borderColor: "rgb(192,192,192)",
+			backgroundColor: "(250,128,114)",
+			borderColor: "(250,128,114)",
 		},
 		{
 			label: 'Bill (Sharing)',
@@ -484,8 +484,8 @@ _chart.chart_4.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(152,251,152)",
-			borderColor: "rgb(152,251,152)",
+			backgroundColor: "rgb(4, 0, 255)",
+			borderColor: "rgb(4, 0, 255)",
 		},
 		{
 			label: 'Ann (Sharing)',
@@ -494,8 +494,8 @@ _chart.chart_4.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(152,251,152)",
-			borderColor: "rgb(152,251,152)",
+			backgroundColor: "rgb(255, 0, 0)",
+			borderColor: "rgb(255, 0, 0)",
 		}]
 	},
 	options: {
