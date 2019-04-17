@@ -590,7 +590,7 @@ _chart.chart_4.update_2 = function(_value){
 	_chart.chart_4.chart.update();
 }
 
-_chart.chart_4.update_4 = function(_value){
+_chart.chart_4.update_3 = function(_value){
 	_chart.chart_4.config.data.datasets[3].data.push(_value);
 	_chart.chart_4.chart.update();
 }
