@@ -315,11 +315,6 @@ _chart.chart_2.update_1 = function(_value){
 	_chart.chart_2.chart.update();
 }
 
-_chart.chart_2.update_2 = function(_value){
-	_chart.chart_2.config.data.datasets[2].data.push(_value);
-	_chart.chart_2.chart.update();
-}
-
 _chart.chart_2.reset = function(_value){
 	_chart.chart_2.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_2.config.data.datasets[0].data = [];
