@@ -456,43 +456,53 @@ _chart.chart_3.hide = function(_value){
 _chart.chart_4.config = {
 	type: 'line',
 	data: {
-		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ],
 		datasets: [{
-			lineTension: 0,
 			label: 'Bill',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(54, 162, 235)",
-			borderColor: "rgb(54, 162, 235)",
+			backgroundColor: "rgb(192,192,192)",
+			borderColor: "rgb(192,192,192)",
 		},
 		{
-			lineTension: 0,
 			label: 'Ann',
+			lineTension: 0,
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 99, 132)",
-			borderColor: "rgb(255, 99, 132)",
+			backgroundColor: "rgb(192,192,192)",
+			borderColor: "rgb(192,192,192)",
 		},
 		{
+			label: 'Bill (Sharing)',
 			lineTension: 0,
-			label: 'Pool',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(128,36,171)",
-			borderColor: "rgb(128,36,171)",
+			backgroundColor: "rgb(152,251,152)",
+			borderColor: "rgb(152,251,152)",
+		},
+		{
+			label: 'Ann (Sharing)',
+			lineTension: 0,
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(152,251,152)",
+			borderColor: "rgb(152,251,152)",
 		}]
 	},
 	options: {
 		responsive: true,
 		title: {
-			display: true,
-			text: 'Pooling & Sharing'
+			display: false,
+			text: ''
 		},
 		tooltips: {
 			enabled: false,
@@ -511,24 +521,32 @@ _chart.chart_4.config = {
 				}
 			}],
 			yAxes: [{
-				display: true,
-				scaleLabel: { labelString: [] },
-				ticks: {
-					min: 0,
-					callback: function(label, index, labels) {
-						console.log(label);
-						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
-					}
-				}
+			    scaleLabel: {
+			        display: true,	
+			        labelString: 'KG',
+			    },
+			    type: 'logarithmic',
+			    position: 'left',
+			    ticks: {
+			         min: 0, //minimum tick
+			         max: 100000000, //maximum tick
+			         callback: function (value, index, values) {
+			             return Number(value.toString()); //pass tick values as a string into Number function
+			         }
+			    },
+			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
+			        chartObj.ticks = [];
+			        chartObj.ticks.push(0);
+			        chartObj.ticks.push(1);
+			        chartObj.ticks.push(10);
+			        chartObj.ticks.push(100);
+			        chartObj.ticks.push(1000);
+			        chartObj.ticks.push(10000);
+			        chartObj.ticks.push(100000);
+			        chartObj.ticks.push(1000000);
+			        chartObj.ticks.push(10000000);
+			        chartObj.ticks.push(100000000);
+			    }
 			}]
 		}
 	}
@@ -569,6 +587,11 @@ _chart.chart_4.update_1 = function(_value){
 
 _chart.chart_4.update_2 = function(_value){
 	_chart.chart_4.config.data.datasets[2].data.push(_value);
+	_chart.chart_4.chart.update();
+}
+
+_chart.chart_4.update_4 = function(_value){
+	_chart.chart_4.config.data.datasets[3].data.push(_value);
 	_chart.chart_4.chart.update();
 }
 
