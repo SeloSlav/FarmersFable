@@ -529,7 +529,7 @@ _chart.chart_4.config = {
 			    position: 'left',
 			    ticks: {
 			         min: 0, //minimum tick
-			         max: 100000000, //maximum tick
+			         max: 10000000000, //maximum tick
 			         callback: function (value, index, values) {
 			             return Number(value.toString()); //pass tick values as a string into Number function
 			         }
@@ -546,6 +546,8 @@ _chart.chart_4.config = {
 			        chartObj.ticks.push(1000000);
 			        chartObj.ticks.push(10000000);
 			        chartObj.ticks.push(100000000);
+			        chartObj.ticks.push(1000000000);
+			        chartObj.ticks.push(10000000000);
 			    }
 			}]
 		}
