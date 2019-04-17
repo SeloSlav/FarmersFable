@@ -204,8 +204,7 @@ _chart.chart_2.config = {
 	type: 'line',
 	data: {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
-		datasets: [
-		{
+		datasets: [{
 			lineTension: 0,
 			label: 'Bill',
 			data: [],
@@ -331,27 +330,7 @@ _chart.chart_3.config = {
 	type: 'line',
 	data: {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
-		datasets: [/*{
-			lineTension: 0,
-			label: 'Bill',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(54, 162, 235)",
-			borderColor: "rgb(54, 162, 235)",
-		},
-		{
-			lineTension: 0,
-			label: 'Ann',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 99, 132)",
-			borderColor: "rgb(255, 99, 132)",
-		},*/
-		{
+		datasets: [{
 			lineTension: 0,
 			label: 'Bill',
 			data: [],
@@ -370,17 +349,7 @@ _chart.chart_3.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 0, 0)",
 			borderColor: "rgb(255, 0, 0)",
-		}/*,
-		{
-			lineTension: 0,
-			label: 'Pool',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(128,36,171)",
-			borderColor: "rgb(128,36,171)",
-		}*/]
+		}]
 	},
 	options: {
 		responsive: true,
@@ -472,31 +441,10 @@ _chart.chart_3.update_1 = function(_value){
 	_chart.chart_3.chart.update();
 }
 
-_chart.chart_3.update_2 = function(_value){
-	_chart.chart_3.config.data.datasets[2].data.push(_value);
-	_chart.chart_3.chart.update();
-}
-
-
-_chart.chart_3.update_3 = function(_value){
-	_chart.chart_3.config.data.datasets[3].data.push(_value);
-	_chart.chart_3.chart.update();
-}
-
-
-_chart.chart_3.update_4 = function(_value){
-	_chart.chart_3.config.data.datasets[4].data.push(_value);
-	_chart.chart_3.chart.update();
-}
-
-
 _chart.chart_3.reset = function(_value){
 	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
 	_chart.chart_3.config.data.datasets[1].data = [];
-	_chart.chart_3.config.data.datasets[2].data = [];
-	_chart.chart_3.config.data.datasets[3].data = [];
-	_chart.chart_3.config.data.datasets[4].data = [];
 	_chart.chart_3.chart.update();	
 }
 
