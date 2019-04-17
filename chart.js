@@ -484,8 +484,8 @@ _chart.chart_4.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(4, 0, 255)",
-			borderColor: "rgb(4, 0, 255)",
+			backgroundColor: "rgb(148,0,211)",
+			borderColor: "rgb(148,0,211)",
 		},
 		{
 			lineTension: 0,
@@ -494,8 +494,8 @@ _chart.chart_4.config = {
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 0, 0)",
-			borderColor: "rgb(255, 0, 0)",
+			backgroundColor: "rgb(148,0,211)",
+			borderColor: "rgb(148,0,211)",
 		}]
 	},
 	options: {
