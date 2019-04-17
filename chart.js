@@ -9,6 +9,7 @@ var _chart = {
 	chart_5 : {},
 	chart_6 : {},
 	chart_7 : {},
+	chart_9: {},
 };
 
 _chart.chart_0.config = {
@@ -1062,30 +1063,11 @@ _chart.chart_7.hide = function(_value){
 }
 
 //
-_chart.chart_3.config = {
+_chart.chart_9.config = {
 	type: 'line',
 	data: {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
-		datasets: [/*{
-			lineTension: 0,
-			label: 'Bill',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(54, 162, 235)",
-			borderColor: "rgb(54, 162, 235)",
-		},
-		{
-			lineTension: 0,
-			label: 'Ann',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 99, 132)",
-			borderColor: "rgb(255, 99, 132)",
-		},*/
+		datasets: [
 		{
 			lineTension: 0,
 			label: 'Bill',
@@ -1105,17 +1087,7 @@ _chart.chart_3.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 0, 0)",
 			borderColor: "rgb(255, 0, 0)",
-		}/*,
-		{
-			lineTension: 0,
-			label: 'Pool',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(128,36,171)",
-			borderColor: "rgb(128,36,171)",
-		}*/]
+		}]
 	},
 	options: {
 		responsive: true,
