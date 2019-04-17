@@ -9,7 +9,7 @@ var _chart = {
 	chart_5 : {},
 	chart_6 : {},
 	chart_7 : {},
-	chart_9: {},
+	chart_9 : {},
 };
 
 _chart.chart_0.config = {
