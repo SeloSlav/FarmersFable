@@ -9,7 +9,6 @@ var _chart = {
 	chart_5 : {},
 	chart_6 : {},
 	chart_7 : {},
-	chart_9 : {},
 };
 
 _chart.chart_0.config = {
@@ -205,38 +204,34 @@ _chart.chart_2.config = {
 	type: 'line',
 	data: {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
-		datasets: [{
+		datasets: [
+		{
 			lineTension: 0,
 			label: 'Bill',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(54, 162, 235)",
-			borderColor: "rgb(54, 162, 235)",
+			backgroundColor: "rgb(4, 0, 255)",
+			borderColor: "rgb(4, 0, 255)",
 		},
 		{
+			lineTension: 0,
 			label: 'Ann',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
 			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 99, 132)",
-			borderColor: "rgb(255, 99, 132)",
-		},
-		{
-			label: 'Pool',
-			lineTension: 0,
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(0,0,0)",
-			borderColor: "rgb(0,0,0)",
+			backgroundColor: "rgb(255, 0, 0)",
+			borderColor: "rgb(255, 0, 0)",
 		}]
 	},
 	options: {
 		responsive: true,
+		title: {
+			display: true,
+			text: ''
+		},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -254,24 +249,34 @@ _chart.chart_2.config = {
 				}
 			}],
 			yAxes: [{
-				display: true,
-				scaleLabel: { labelString: [] },
-				ticks: {
-					min: 0,
-					callback: function(label, index, labels) {
-						console.log(label);
-						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
-					}
-				}
+			    scaleLabel: {
+			        display: true,
+			        labelString: 'KG',
+			    },
+			    type: 'logarithmic',
+			    position: 'left',
+			    ticks: {
+			         min: 0, //minimum tick
+			         max: 10000000000, //maximum tick
+			         callback: function (value, index, values) {
+			             return Number(value.toString()); //pass tick values as a string into Number function
+			         }
+			    },
+			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
+			        chartObj.ticks = [];
+			        chartObj.ticks.push(0);
+			        chartObj.ticks.push(1);
+			        chartObj.ticks.push(10);
+			        chartObj.ticks.push(100);
+			        chartObj.ticks.push(1000);
+			        chartObj.ticks.push(10000);
+			        chartObj.ticks.push(100000);
+			        chartObj.ticks.push(1000000);
+			        chartObj.ticks.push(10000000);
+			        chartObj.ticks.push(100000000);
+			        chartObj.ticks.push(1000000000);
+			        chartObj.ticks.push(10000000000);
+			    }
 			}]
 		}
 	}
@@ -1061,133 +1066,4 @@ _chart.chart_7.hide = function(_value){
 	var _chart_7 = document.getElementById('chart_7_container');
 	_chart_7.style.display = 'none';
 }
-
 //
-_chart.chart_9.config = {
-	type: 'line',
-	data: {
-		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
-		datasets: [
-		{
-			lineTension: 0,
-			label: 'Bill',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(4, 0, 255)",
-			borderColor: "rgb(4, 0, 255)",
-		},
-		{
-			lineTension: 0,
-			label: 'Ann',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(255, 0, 0)",
-			borderColor: "rgb(255, 0, 0)",
-		}]
-	},
-	options: {
-		responsive: true,
-		title: {
-			display: true,
-			text: ''
-		},
-		tooltips: {
-			enabled: false,
-			mode: 'index',
-			intersect: false,
-		},
-		hover: {
-			mode: 'nearest',
-			intersect: true
-		},
-		scales: {
-			xAxes: [{
-				display: true,
-				scaleLabel: {
-					display: true
-				}
-			}],
-			yAxes: [{
-			    scaleLabel: {
-			        display: true,
-			        labelString: 'KG',
-			    },
-			    type: 'logarithmic',
-			    position: 'left',
-			    ticks: {
-			         min: 0, //minimum tick
-			         max: 10000000000, //maximum tick
-			         callback: function (value, index, values) {
-			             return Number(value.toString()); //pass tick values as a string into Number function
-			         }
-			    },
-			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
-			        chartObj.ticks = [];
-			        chartObj.ticks.push(0);
-			        chartObj.ticks.push(1);
-			        chartObj.ticks.push(10);
-			        chartObj.ticks.push(100);
-			        chartObj.ticks.push(1000);
-			        chartObj.ticks.push(10000);
-			        chartObj.ticks.push(100000);
-			        chartObj.ticks.push(1000000);
-			        chartObj.ticks.push(10000000);
-			        chartObj.ticks.push(100000000);
-			        chartObj.ticks.push(1000000000);
-			        chartObj.ticks.push(10000000000);
-			    }
-			}]
-		}
-	}
-};
-
-_chart.chart_9.show = function(){
-	var _chart_9 = document.getElementById('chart_9_container');
-	
-	window._placeHolder_1 = document.getElementById('placeHolder_9');
-	
-	_chart_9.style.width = _placeHolder_1.style.width;
-	_chart_9.style.height = _placeHolder_1.style.height;
-	_chart_9.style.top = _placeHolder_1.style.top;
-	_chart_9.style.left = _placeHolder_1.style.left;
-	_chart_9.style.zIndex = "999";
-	var ctx = document.getElementById('chart_9').getContext('2d');
-	ctx.canvas.width = $('#placeHolder_1').width();
-	ctx.canvas.height = $('#placeHolder_1').height();
-	ctx.canvas.originalwidth = ctx.canvas.width;
-	ctx.canvas.originalheight = ctx.canvas.height;
-	_chart_9.style.display = 'block';
-	_chart.chart_9.chart = new Chart(ctx, _chart.chart_9.config);
-}
-
-_chart.chart_9.update_0 = function(_value){
-	if ( _chart.chart_9.config.data.datasets[0].data.length < 5) {
-		_chart.chart_9.config.data.datasets[0].data.push(_value);
-	} else {
-		_chart.chart_9.config.data.datasets[0].data.push(_value);
-		_chart.chart_9.config.data.labels.push("Harvest "+(parseInt(_chart.chart_9.config.data.datasets[0].data.length)));
-	}
-	_chart.chart_9.chart.update();
-}
-
-_chart.chart_9.update_1 = function(_value){
-	_chart.chart_9.config.data.datasets[1].data.push(_value);
-	_chart.chart_9.chart.update();
-}
-
-
-_chart.chart_9.reset = function(_value){
-	_chart.chart_9.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
-	_chart.chart_9.config.data.datasets[0].data = [];
-	_chart.chart_9.config.data.datasets[1].data = [];
-	_chart.chart_9.chart.update();	
-}
-
-_chart.chart_9.hide = function(_value){
-	var _chart_9 = document.getElementById('chart_9_container');
-	_chart_9.style.display = 'none';
-}
