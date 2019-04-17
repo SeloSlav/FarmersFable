@@ -1184,9 +1184,6 @@ _chart.chart_9.reset = function(_value){
 	_chart.chart_9.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_9.config.data.datasets[0].data = [];
 	_chart.chart_9.config.data.datasets[1].data = [];
-	_chart.chart_9.config.data.datasets[2].data = [];
-	_chart.chart_9.config.data.datasets[3].data = [];
-	_chart.chart_9.config.data.datasets[4].data = [];
 	_chart.chart_9.chart.update();	
 }
 
