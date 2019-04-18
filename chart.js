@@ -602,6 +602,7 @@ _chart.chart_4.reset = function(_value){
 	_chart.chart_4.config.data.datasets[0].data = [];
 	_chart.chart_4.config.data.datasets[1].data = [];
 	_chart.chart_4.config.data.datasets[2].data = [];
+	_chart.chart_4.config.data.datasets[3].data = [];
 	_chart.chart_4.chart.update();
 }
 
