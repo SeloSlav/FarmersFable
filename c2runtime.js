@@ -27701,12 +27701,12 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.SetLayerVisible,
 	cr.system_object.prototype.acts.SetGroupActive,
 	cr.system_object.prototype.cnds.IsGroupActive,
+	cr.system_object.prototype.exps.log10,
 	cr.plugins_.SpriteFontPlus.prototype.acts.SetText,
-	cr.system_object.prototype.exps.round,
 	cr.plugins_.Browser.prototype.acts.GoToURLWindow,
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
 	cr.plugins_.Audio.prototype.acts.SetSilent,
-	cr.system_object.prototype.exps.log10
+	cr.system_object.prototype.exps.round
 ];};
