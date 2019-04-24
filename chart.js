@@ -50,15 +50,16 @@ _chart.chart_0.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+						if ((label >= 1) && (label < 2))
+							return "10 Kg";
+						else if ((label > 2) && (label < 3))
+							return "100 Kg";
+						else if ((label > 3) && (label < 4))
+							return "1000 Kg";
+						else if ((label > 4) && (label < 5))
+							return "10000 Kg";
+						else if ((label > 5) && (label < 6))
+							return "100000 Kg";
 					}
 				}
 			}]
@@ -145,15 +146,16 @@ _chart.chart_1.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+						if ((label >= 1) && (label < 2))
+							return "10 Kg";
+						else if ((label > 2) && (label < 3))
+							return "100 Kg";
+						else if ((label > 3) && (label < 4))
+							return "1000 Kg";
+						else if ((label > 4) && (label < 5))
+							return "10000 Kg";
+						else if ((label > 5) && (label < 6))
+							return "100000 Kg";
 					}
 				}
 			}]
@@ -365,34 +367,25 @@ _chart.chart_3.config = {
 				}
 			}],
 			yAxes: [{
-			    scaleLabel: {
-			        display: true,
-			        labelString: 'KG',
-			    },
-			    type: 'logarithmic',
-			    position: 'left',
-			    ticks: {
-			         min: 0, //minimum tick
-			         max: 10000000000, //maximum tick
-			         callback: function (value, index, values) {
-			             return Number(value.toString()); //pass tick values as a string into Number function
-			         }
-			    },
-			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
-			        chartObj.ticks = [];
-			        chartObj.ticks.push(0);
-			        chartObj.ticks.push(1);
-			        chartObj.ticks.push(10);
-			        chartObj.ticks.push(100);
-			        chartObj.ticks.push(1000);
-			        chartObj.ticks.push(10000);
-			        chartObj.ticks.push(100000);
-			        chartObj.ticks.push(1000000);
-			        chartObj.ticks.push(10000000);
-			        chartObj.ticks.push(100000000);
-			        chartObj.ticks.push(1000000000);
-			        chartObj.ticks.push(10000000000);
-			    }
+				display: true,
+				scaleLabel: { labelString: [] },
+				ticks: {
+					min: 0,
+					callback: function(label, index, labels) {
+						console.log(label);
+						
+						if ((label >= 1) && (label < 2))
+							return "10 Kg";
+						else if ((label > 2) && (label < 3))
+							return "100 Kg";
+						else if ((label > 3) && (label < 4))
+							return "1000 Kg";
+						else if ((label > 4) && (label < 5))
+							return "10000 Kg";
+						else if ((label > 5) && (label < 6))
+							return "100000 Kg";
+					}
+				}
 			}]
 		}
 	}
@@ -512,34 +505,25 @@ _chart.chart_4.config = {
 				}
 			}],
 			yAxes: [{
-			    scaleLabel: {
-			        display: true,	
-			        labelString: 'KG',
-			    },
-			    type: 'logarithmic',
-			    position: 'left',
-			    ticks: {
-			         min: 0, //minimum tick
-			         max: 10000000000, //maximum tick
-			         callback: function (value, index, values) {
-			             return Number(value.toString()); //pass tick values as a string into Number function
-			         }
-			    },
-			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
-			        chartObj.ticks = [];
-			        chartObj.ticks.push(0);
-			        chartObj.ticks.push(1);
-			        chartObj.ticks.push(10);
-			        chartObj.ticks.push(100);
-			        chartObj.ticks.push(1000);
-			        chartObj.ticks.push(10000);
-			        chartObj.ticks.push(100000);
-			        chartObj.ticks.push(1000000);
-			        chartObj.ticks.push(10000000);
-			        chartObj.ticks.push(100000000);
-			        chartObj.ticks.push(1000000000);
-			        chartObj.ticks.push(10000000000);
-			    }
+				display: true,
+				scaleLabel: { labelString: [] },
+				ticks: {
+					min: 0,
+					callback: function(label, index, labels) {
+						console.log(label);
+						
+						if ((label >= 1) && (label < 2))
+							return "10 Kg";
+						else if ((label > 2) && (label < 3))
+							return "100 Kg";
+						else if ((label > 3) && (label < 4))
+							return "1000 Kg";
+						else if ((label > 4) && (label < 5))
+							return "10000 Kg";
+						else if ((label > 5) && (label < 6))
+							return "100000 Kg";
+					}
+				}
 			}]
 		}
 	}
@@ -641,15 +625,16 @@ _chart.chart_5.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+						if ((label >= 1) && (label < 2))
+							return "10 Kg";
+						else if ((label > 2) && (label < 3))
+							return "100 Kg";
+						else if ((label > 3) && (label < 4))
+							return "1000 Kg";
+						else if ((label > 4) && (label < 5))
+							return "10000 Kg";
+						else if ((label > 5) && (label < 6))
+							return "100000 Kg";
 					}
 				}
 			}]
@@ -735,15 +720,16 @@ _chart.chart_6.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+						if ((label >= 1) && (label < 2))
+							return "10 Kg";
+						else if ((label > 2) && (label < 3))
+							return "100 Kg";
+						else if ((label > 3) && (label < 4))
+							return "1000 Kg";
+						else if ((label > 4) && (label < 5))
+							return "10000 Kg";
+						else if ((label > 5) && (label < 6))
+							return "100000 Kg";
 					}
 				}
 			}]
