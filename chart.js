@@ -255,14 +255,14 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" 10^3 Kg";
-						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" 10^4 Kg";
-						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" 10^5 Kg";
-						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" 10^6 Kg";
+						if ((label >= 1) && (label < 2))
+							return parseFloat(label/1).toFixed(2)+" 10^1 Kg";
+						else if ((label > 2) && (label < 3))
+							return parseFloat(label/2).toFixed(2)+" 10^2 Kg";
+						else if ((label > 3) && (label < 4))
+							return parseFloat(label/3).toFixed(2)+" 10^3 Kg";
+						else if ((label > 4) && (label < 5))
+							return parseFloat(label/4).toFixed(2)+" 10^4 Kg";
 						else return parseFloat(label).toFixed(1) + " Kg";
 					}
 				}
