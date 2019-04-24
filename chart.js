@@ -255,7 +255,11 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 
-						return "10^" + (3*Math.floor(Math.floor(Math.log(label))/3)) + " Kg";
+						const value = ChartJS.Ticks.formatters.logarithmic.call(this, ...args);
+					  	if (value.length) {
+				    		return Number(value).toLocaleString()
+					  	}
+				 	 	return value;
 						
 						/*if ((label >= 1000) && (label < 1000000))
 							return parseFloat(label/1000).toFixed(2)+" K Kg";
