@@ -50,16 +50,15 @@ _chart.chart_0.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1) && (label < 2))
-							return "10 Kg";
-						else if ((label > 2) && (label < 3))
-							return "100 Kg";
-						else if ((label > 3) && (label < 4))
-							return "1000 Kg";
-						else if ((label > 4) && (label < 5))
-							return "10000 Kg";
-						else if ((label > 5) && (label < 6))
-							return "100000 Kg";
+						if ((label >= 1000) && (label < 1000000))
+							return parseFloat(label/1000).toFixed(2)+" K Kg";
+						else if ((label > 1000000) && (label < 1000000000))
+							return parseFloat(label/1000000).toFixed(2)+" M Kg";
+						else if ((label > 1000000000) && (label < 1000000000000))
+							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
+						else if ((label > 1000000000000) && (label < 1000000000000000))
+							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
+						else return parseFloat(label).toFixed(1) + " Kg";
 					}
 				}
 			}]
@@ -146,16 +145,15 @@ _chart.chart_1.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label >= 1) && (label < 2))
-							return "10 Kg";
-						else if ((label > 2) && (label < 3))
-							return "100 Kg";
-						else if ((label > 3) && (label < 4))
-							return "1000 Kg";
-						else if ((label > 4) && (label < 5))
-							return "10000 Kg";
-						else if ((label > 5) && (label < 6))
-							return "100000 Kg";
+						if ((label >= 1000) && (label < 1000000))
+							return parseFloat(label/1000).toFixed(2)+" K Kg";
+						else if ((label > 1000000) && (label < 1000000000))
+							return parseFloat(label/1000000).toFixed(2)+" M Kg";
+						else if ((label > 1000000000) && (label < 1000000000000))
+							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
+						else if ((label > 1000000000000) && (label < 1000000000000000))
+							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
+						else return parseFloat(label).toFixed(1) + " Kg";
 					}
 				}
 			}]
