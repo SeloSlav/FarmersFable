@@ -251,11 +251,11 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -1000.0,
+					min: 0,
 					callback: function(label, index, labels) {
 						console.log(label);
 
-						return 10^(3*floor(floor(log10(label))/3)) + " Kg";
+						return 10^(3*Math.floor(Math.floor(Math.log(label))/3)) + " Kg";
 						
 						/*if ((label >= 1000) && (label < 1000000))
 							return parseFloat(label/1000).toFixed(2)+" K Kg";
