@@ -251,19 +251,21 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: -1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
 						if ((label >= 1) && (label < 2))
-							return parseFloat(label/1).toFixed(2)+" 10^1 Kg";
+							return "10^1 Kg";
 						else if ((label > 2) && (label < 3))
-							return parseFloat(label/2).toFixed(2)+" 10^2 Kg";
+							return "10^2 Kg";
 						else if ((label > 3) && (label < 4))
-							return parseFloat(label/3).toFixed(2)+" 10^3 Kg";
+							return "10^3 Kg";
 						else if ((label > 4) && (label < 5))
-							return parseFloat(label/4).toFixed(2)+" 10^4 Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+							return "10^4 Kg";
+						else if ((label > 5) && (label < 6))
+							return "10^5 Kg";
+						else return "10^0 Kg";
 					}
 				}
 			}]
