@@ -256,15 +256,15 @@ _chart.chart_2.config = {
 						console.log(label);
 						
 						if ((label >= 1) && (label < 2))
-							return "10^1 Kg";
+							return "10 Kg";
 						else if ((label > 2) && (label < 3))
-							return "10^2 Kg";
+							return "100 Kg";
 						else if ((label > 3) && (label < 4))
-							return "10^3 Kg";
+							return "1000 Kg";
 						else if ((label > 4) && (label < 5))
-							return "10^4 Kg";
+							return "10000 Kg";
 						else if ((label > 5) && (label < 6))
-							return "10^5 Kg";
+							return "100000 Kg";
 					}
 				}
 			}]
