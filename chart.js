@@ -254,22 +254,16 @@ _chart.chart_2.config = {
 					min: 0,
 					callback: function(label, index, labels) {
 						console.log(label);
-
 						
-					  	if (value.length) {
-				    		return Number(label).toLocaleString()
-					  	}
-				 	 	return label;
-						
-						/*if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
+						if ((label >= 1000) && (label < 1000000))
+							return parseFloat(label/1000).toFixed(2)+" 10^3 Kg";
 						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
+							return parseFloat(label/1000000).toFixed(2)+" 10^4 Kg";
 						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
+							return parseFloat(label/1000000000).toFixed(2)+" 10^5 Kg";
 						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";*/
+							return parseFloat(label/1000000000000).toFixed(2)+" 10^6 Kg";
+						else return parseFloat(label).toFixed(1) + " Kg";
 					}
 				}
 			}]
