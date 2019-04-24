@@ -253,7 +253,16 @@ _chart.chart_2.config = {
 				ticks: {
 					min: 0,
 					callback: function(label, index, labels) {
-						console.log(label);
+
+					const merged = datasets.reduce((acc, cur) => {
+					    acc.push(...cur.data);
+					    return acc;
+					  }, []);
+
+				  	const max = Math.max(...merged).toString();
+				  	return `1${  '0'.repeat(max.length)}`;
+
+						/*console.log(label);
 						
 						if ((label >= 1) && (label < 2))
 							return "10 Kg";
@@ -264,17 +273,14 @@ _chart.chart_2.config = {
 						else if ((label > 4) && (label < 5))
 							return "10000 Kg";
 						else if ((label > 5) && (label < 6))
-							return "100000 Kg";
+							return "100000 Kg";*/
 					}
-				},
-			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
-			        chartObj.ticks = [];
-			        chartObj.ticks.push(0);
-			    }
+				}
 			}]
 		}
 	}
 };
+
 _chart.chart_2.show = function(){
 	var _chart_2 = document.getElementById('chart_2_container');
 	
