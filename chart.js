@@ -251,7 +251,7 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -1,
+					min: 0,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
@@ -265,7 +265,6 @@ _chart.chart_2.config = {
 							return "10^4 Kg";
 						else if ((label > 5) && (label < 6))
 							return "10^5 Kg";
-						else return label.toFixed(2) + " Kg";
 					}
 				}
 			}]
