@@ -251,7 +251,7 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: -1000.0,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
