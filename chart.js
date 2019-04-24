@@ -254,8 +254,10 @@ _chart.chart_2.config = {
 					min: -1000.0,
 					callback: function(label, index, labels) {
 						console.log(label);
+
+						return 10^(3*floor(floor(log10(label))/3)) + " Kg";
 						
-						if ((label >= 1000) && (label < 1000000))
+						/*if ((label >= 1000) && (label < 1000000))
 							return parseFloat(label/1000).toFixed(2)+" K Kg";
 						else if ((label > 1000000) && (label < 1000000000))
 							return parseFloat(label/1000000).toFixed(2)+" M Kg";
@@ -263,7 +265,7 @@ _chart.chart_2.config = {
 							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
 						else if ((label > 1000000000000) && (label < 1000000000000000))
 							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+						else return parseFloat(label).toFixed(1) + " Kg";*/
 					}
 				}
 			}]
