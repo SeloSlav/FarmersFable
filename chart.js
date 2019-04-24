@@ -255,11 +255,11 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 
-						const value = ChartJS.Ticks.formatters.logarithmic.call(this, ...args);
+						
 					  	if (value.length) {
-				    		return Number(value).toLocaleString()
+				    		return Number(label).toLocaleString()
 					  	}
-				 	 	return value;
+				 	 	return label;
 						
 						/*if ((label >= 1000) && (label < 1000000))
 							return parseFloat(label/1000).toFixed(2)+" K Kg";
