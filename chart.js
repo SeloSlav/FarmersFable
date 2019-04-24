@@ -265,7 +265,7 @@ _chart.chart_2.config = {
 							return "10^4 Kg";
 						else if ((label > 5) && (label < 6))
 							return "10^5 Kg";
-						else return "10^0 Kg";
+						else return label.toFixed(2) + " Kg";
 					}
 				}
 			}]
