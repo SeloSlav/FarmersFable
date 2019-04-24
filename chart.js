@@ -266,7 +266,11 @@ _chart.chart_2.config = {
 						else if ((label > 5) && (label < 6))
 							return "100000 Kg";
 					}
-				}
+				},
+			    afterBuildTicks: function (chartObj) { //Build ticks labelling as per your need
+			        chartObj.ticks = [];
+			        chartObj.ticks.push(0);
+			    }
 			}]
 		}
 	}
