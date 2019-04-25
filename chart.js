@@ -253,12 +253,11 @@ _chart.chart_2.config = {
 				ticks: {
 					min: 0,
 					beginAtZero: true,
-					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
 						if ((label >= 0) && (label < 1))
-							return "0 Kg";
+							return "";
 						else if ((label > 1) && (label < 2))
 							return "10 Kg";
 						else if ((label > 2) && (label < 3))
