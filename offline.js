@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1556220883,
+	"version": 1556222216,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -77,6 +77,7 @@
 		"images/rice_ann-sheet0.png",
 		"images/more_rain2-sheet0.png",
 		"images/sprite11-sheet0.png",
+		"images/sprite12-sheet0.png",
 		"media/backgroundambients.m4a",
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
