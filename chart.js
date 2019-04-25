@@ -256,20 +256,22 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label < 2))
+						if ((label > 0) && (label < 1))
 							return "";
+						else if ((label > 1) && (label < 2))
+							return "10 KG";
 						else if ((label > 2) && (label < 3))
-							return "100 Kg";
+							return "100 KG";
 						else if ((label > 3) && (label < 4))
-							return "1,000 Kg";
+							return "1,000 KG";
 						else if ((label > 4) && (label < 5))
-							return "10,000 Kg";
+							return "10,000 KG";
 						else if ((label > 5) && (label < 6))
-							return "100,000 Kg";
+							return "100,000 KG";
 						else if ((label > 6) && (label < 7))
-							return "1,000,000 Kg";
+							return "1,000,000 KG";
 						else if ((label > 7) && (label < 8))
-							return "10,000,000 Kg";
+							return "10,000,000 KG";
 
 						/*if ((label >= 1) && (label < 2))
 							return parseFloat(label/1).toFixed(2)+" Kg";
