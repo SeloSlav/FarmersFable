@@ -267,11 +267,9 @@ _chart.chart_2.config = {
 						else if ((label > 4) && (label < 5))
 							return "10,000 KG";
 						else if ((label > 5) && (label < 6))
-							return "100,000 KG";
+							return "100K KG";
 						else if ((label > 6) && (label < 7))
-							return "1,000,000 KG";
-						else if ((label > 7) && (label < 8))
-							return "10,000,000 KG";
+							return "1M KG";
 
 						/*if ((label >= 1) && (label < 2))
 							return parseFloat(label/1).toFixed(2)+" Kg";
