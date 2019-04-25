@@ -258,7 +258,7 @@ _chart.chart_2.config = {
 						
 						if ((label > 0) && (label < 1))
 							return "";
-						else if ((label > 1) && (label < 2))
+						else if ((label = 1))
 							return "10 KG";
 						else if ((label > 2) && (label < 3))
 							return "100 KG";
