@@ -263,7 +263,7 @@ _chart.chart_2.config = {
 							return Math.pow(10,parseFloat(label/3).toFixed(2))
 						else if ((label > 4) && (label < 5))
 							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
-						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
+						else return "0 Kg";
 					}
 				}
 			}]
