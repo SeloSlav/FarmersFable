@@ -505,6 +505,9 @@ _chart.chart_4.config = {
 				display: true,
 				scaleLabel: {
 					display: true
+				},
+				ticks: {
+					stepSize: 10,
 				}
 			}],
 			yAxes: [{
