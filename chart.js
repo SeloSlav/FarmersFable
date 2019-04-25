@@ -256,9 +256,11 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label > 0) && (label < 1))
+						if ((label == 0 ))
 							return "";
-						else if ((label = 1))
+						else if ((label > 0) && (label < 1))
+							return "";
+						else if ((label > 1) && (label < 2))
 							return "10 KG";
 						else if ((label > 2) && (label < 3))
 							return "100 KG";
