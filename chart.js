@@ -252,28 +252,9 @@ _chart.chart_2.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
-						console.log(label);
-						
-						/*if ((label == 0))
-							return "";
-						else if ((label > 0) && (label < 1))
-							return "";
-						else if ((label > 1) && (label < 2))
-							return "10 KG";
-						else if ((label > 2) && (label < 3))
-							return "100 KG";
-						else if ((label > 3) && (label < 4))
-							return "1,000 KG";
-						else if ((label > 4) && (label < 5))
-							return "10,000 KG";
-						else if ((label > 5) && (label < 6))
-							return "100,000 KG";
-						else if ((label > 6) && (label < 7))
-							return "1,000,000 KG";
-						else return "";*/
-
 						if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
 						else if ((label > 2) && (label < 3))
@@ -388,23 +369,18 @@ _chart.chart_3.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
-						console.log(label);
-						
 						if ((label >= 1) && (label < 2))
-							return "10 Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
 						else if ((label > 2) && (label < 3))
-							return "100 Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2))
 						else if ((label > 3) && (label < 4))
-							return "1,000 Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2))
 						else if ((label > 4) && (label < 5))
-							return "10,000 Kg";
-						else if ((label > 5) && (label < 6))
-							return "100,000 Kg";
-						else if ((label > 6) && (label < 7))
-							return "1,000,000 Kg";
-						else if ((label > 7) && (label < 8))
-							return "10,000,000 Kg";
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
 				}
 			}]
@@ -530,23 +506,18 @@ _chart.chart_4.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
-						console.log(label);
-						
 						if ((label >= 1) && (label < 2))
-							return "10 Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
 						else if ((label > 2) && (label < 3))
-							return "100 Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2))
 						else if ((label > 3) && (label < 4))
-							return "1,000 Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2))
 						else if ((label > 4) && (label < 5))
-							return "10,000 Kg";
-						else if ((label > 5) && (label < 6))
-							return "100,000 Kg";
-						else if ((label > 6) && (label < 7))
-							return "1,000,000 Kg";
-						else if ((label > 7) && (label < 8))
-							return "10,000,000 Kg";
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
 				}
 			}]
@@ -647,23 +618,18 @@ _chart.chart_5.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
-						console.log(label);
-						
 						if ((label >= 1) && (label < 2))
-							return "10 Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
 						else if ((label > 2) && (label < 3))
-							return "100 Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2))
 						else if ((label > 3) && (label < 4))
-							return "1,000 Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2))
 						else if ((label > 4) && (label < 5))
-							return "10,000 Kg";
-						else if ((label > 5) && (label < 6))
-							return "100,000 Kg";
-						else if ((label > 6) && (label < 7))
-							return "1,000,000 Kg";
-						else if ((label > 7) && (label < 8))
-							return "10,000,000 Kg";
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
 				}
 			}]
