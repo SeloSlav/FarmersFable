@@ -228,11 +228,16 @@
 			$('#page4').click(function(){
 				$( '.dot-nav--item' ).removeClass( "is-active" );
 				$( '#page4' ).addClass( "is-active" );
-				_cr.changelayout = _cr.layouts.end;
+				_cr.changelayout = _cr.layouts.pooling_explainer;
 			});
 			$('#page5').click(function(){
 				$( '.dot-nav--item' ).removeClass( "is-active" );
 				$( '#page5' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.end;
+			});
+			$('#page6').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page6' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.credit;
 			});
 			$('#sound_btn').click(function(){
@@ -266,10 +271,13 @@
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page4' ).addClass( "is-active" );
 		}
-		
 		function gotoPage5(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page5' ).addClass( "is-active" );
+		}
+		function gotoPage6(){
+			$( '.dot-nav--item' ).removeClass( "is-active" );
+			$( '#page6' ).addClass( "is-active" );
 		}
     </script>
 </body> 
