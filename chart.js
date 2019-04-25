@@ -251,13 +251,13 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -1,
+					min: 0,
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						/*if ((label >= 1) && (label < 2))
+						if ((label >= 1) && (label < 2))
 							return "10 Kg";
 						else if ((label > 2) && (label < 3))
 							return "100 Kg";
@@ -270,9 +270,9 @@ _chart.chart_2.config = {
 						else if ((label > 6) && (label < 7))
 							return "1,000,000 Kg";
 						else if ((label > 7) && (label < 8))
-							return "10,000,000 Kg";*/
+							return "10,000,000 Kg";
 
-						if ((label >= 1) && (label < 2))
+						/*if ((label >= 1) && (label < 2))
 							return parseFloat(label/1).toFixed(2)+" Kg";
 						else if ((label > 2) && (label < 3))
 							return parseFloat(label/2).toFixed(2)+" Kg";
@@ -280,7 +280,7 @@ _chart.chart_2.config = {
 							return parseFloat(label/3).toFixed(2)+" Kg";
 						else if ((label > 4) && (label < 5))
 							return parseFloat(label/4).toFixed(2)+" Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+						else return parseFloat(label).toFixed(1) + " Kg";*/
 					}
 				}
 			}]
@@ -386,6 +386,8 @@ _chart.chart_3.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
@@ -528,6 +530,8 @@ _chart.chart_4.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
@@ -645,6 +649,8 @@ _chart.chart_5.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
@@ -744,6 +750,8 @@ _chart.chart_6.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					beginAtZero: true,
+					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
