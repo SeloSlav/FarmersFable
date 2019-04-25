@@ -253,7 +253,7 @@ _chart.chart_2.config = {
 				ticks: {
 					min: -1,
 					beginAtZero: true,
-					stepSize: 1;
+					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
