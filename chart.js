@@ -256,10 +256,8 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label < 1))
+						if ((label < 2))
 							return "";
-						else if ((label > 1) && (label < 2))
-							return "10 Kg";
 						else if ((label > 2) && (label < 3))
 							return "100 Kg";
 						else if ((label > 3) && (label < 4))
