@@ -531,7 +531,7 @@ _chart.chart_4.config = {
 				ticks: {
 					min: 0,
 					beginAtZero: true,
-					stepSize: 1,
+					stepSize: stepSize * 10,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
