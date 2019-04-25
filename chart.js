@@ -252,10 +252,11 @@ _chart.chart_2.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
+					stepSize: 1,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label == 0))
+						/*if ((label == 0))
 							return "";
 						else if ((label > 0) && (label < 1))
 							return "";
@@ -271,17 +272,17 @@ _chart.chart_2.config = {
 							return "100,000 KG";
 						else if ((label > 6) && (label < 7))
 							return "1,000,000 KG";
-						else return "";
+						else return "";*/
 
-						/*if ((label >= 1) && (label < 2))
-							return parseFloat(label/1).toFixed(2)+" Kg";
+						if ((label >= 1) && (label < 2))
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
 						else if ((label > 2) && (label < 3))
-							return parseFloat(label/2).toFixed(2)+" Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2))
 						else if ((label > 3) && (label < 4))
-							return parseFloat(label/3).toFixed(2)+" Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2))
 						else if ((label > 4) && (label < 5))
-							return parseFloat(label/4).toFixed(2)+" Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";*/
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
 				}
 			}]
