@@ -256,7 +256,7 @@ _chart.chart_2.config = {
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= 0) && (label < 1))
-							return Math.pow("0 Kg";
+							return " Kg";
 						else if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
 						else if ((label > 2) && (label < 3))
