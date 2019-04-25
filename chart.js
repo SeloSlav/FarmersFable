@@ -252,7 +252,6 @@ _chart.chart_2.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: 0,
-					beginAtZero: true,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
@@ -269,7 +268,7 @@ _chart.chart_2.config = {
 						else if ((label > 4) && (label < 5))
 							return "10,000 KG";
 						else if ((label > 5) && (label < 6))
-							return "100K KG";
+							return "100,000 KG";
 						else if ((label > 6) && (label < 7))
 							return "1M KG";
 
