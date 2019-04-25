@@ -255,7 +255,7 @@ _chart.chart_2.config = {
 					callback: function(label, index, labels) {
 						console.log(label);
 						
-						if ((label == 0 ))
+						if ((label == 0))
 							return "";
 						else if ((label > 0) && (label < 1))
 							return "";
@@ -270,7 +270,8 @@ _chart.chart_2.config = {
 						else if ((label > 5) && (label < 6))
 							return "100,000 KG";
 						else if ((label > 6) && (label < 7))
-							return "1M KG";
+							return "1,000,000 KG";
+						else return "";
 
 						/*if ((label >= 1) && (label < 2))
 							return parseFloat(label/1).toFixed(2)+" Kg";
