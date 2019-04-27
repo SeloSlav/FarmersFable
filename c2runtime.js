@@ -27708,5 +27708,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
 	cr.plugins_.Audio.prototype.acts.SetSilent,
-	cr.plugins_.Browser.prototype.acts.GoToURLWindow
+	cr.plugins_.Browser.prototype.acts.GoToURLWindow,
+	cr.system_object.prototype.acts.SubVar
 ];};

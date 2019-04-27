@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1556234523,
+	"version": 1556336874,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -78,6 +78,9 @@
 		"images/more_rain2-sheet0.png",
 		"images/sprite11-sheet0.png",
 		"images/sprite12-sheet0.png",
+		"images/bill_pool-sheet0.png",
+		"images/bill_pool-sheet1.png",
+		"images/bill_pool-sheet2.png",
 		"media/backgroundambients.m4a",
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
