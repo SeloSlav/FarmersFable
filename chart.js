@@ -377,11 +377,11 @@ _chart.chart_3.config = {
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " Kg";
 						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " Kg";
 						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
 						if ((label > 0) && (label < 1))
 							return "";
 						else if ((label >= 1) && (label < 2))
