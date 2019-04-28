@@ -46,7 +46,7 @@ _chart.chart_0.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
@@ -141,7 +141,7 @@ _chart.chart_1.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -253,7 +253,7 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -372,7 +372,7 @@ _chart.chart_3.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -514,7 +514,7 @@ _chart.chart_4.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -628,7 +628,7 @@ _chart.chart_5.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -724,7 +724,7 @@ _chart.chart_6.config = {
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: 0,
+					min: 0.01,
 					callback: function(label, index, labels) {
 						console.log(label);
 						
