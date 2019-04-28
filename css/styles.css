@@ -13,9 +13,9 @@ body{
 }
 .wrap_nav{
 	position: fixed;
-	bottom: 0;
-	height: 10%;
-	width: 100%;
+	top: 0;
+	height: 100%;
+	width: 50px;
 	right: 0;
 	background: rgba(0,0,0,0.8);
 }
