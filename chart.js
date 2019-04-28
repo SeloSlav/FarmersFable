@@ -376,9 +376,13 @@ _chart.chart_3.config = {
 					beginAtZero: true,
 					stepSize: 1,
 					callback: function(label, index, labels) {
-						if ((label >= -1) && (label < 0))
+						if ((label >= -3) && (label < 0))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						if ((label >= 0) && (label < 1))
+						if ((label > -2) && (label < 0))
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+						if ((label > -1) && (label < 0))
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+						if ((label > 0) && (label < 1))
 							return "";
 						else if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
