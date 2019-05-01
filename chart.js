@@ -525,7 +525,8 @@ _chart.chart_4.config = {
 				scaleLabel: {
 					display: true
 				},
-				distribution: 'linear',
+				type: 'linear',
+				distribution: 'series',
 				stepSize: 10
 			}],
 			yAxes: [{
