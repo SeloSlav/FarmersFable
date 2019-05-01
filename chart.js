@@ -536,7 +536,6 @@ _chart.chart_4.config = {
 					callback: function(label, index, labels) {
 						if ((label >= index) && (label < index + 1))
 							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " Kg";
-						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
 				}
 			}]
