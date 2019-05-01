@@ -520,6 +520,7 @@ _chart.chart_4.config = {
 		},
 		scales: {
 			xAxes: [{
+				type: 'line'
 				min: 0,
 				display: true,
 				scaleLabel: {
@@ -535,7 +536,7 @@ _chart.chart_4.config = {
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
-						if ((label >= index) && (label < index + 1))
+						if ((label > index) && (label < index + 1))
 							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " Kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
