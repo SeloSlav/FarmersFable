@@ -132,13 +132,14 @@ _chart.chart_1.config = {
 				display: true,
 				scaleLabel: {
 					display: true
-				}
+				},
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -3,
+					min: -2,
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -250,13 +251,14 @@ _chart.chart_2.config = {
 				display: true,
 				scaleLabel: {
 					display: true
-				}
+				},
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -3,
+					min: -2,
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -375,13 +377,14 @@ _chart.chart_3.config = {
 				display: true,
 				scaleLabel: {
 					display: true
-				}
+				},
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -3,
+					min: -2,
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
@@ -521,15 +524,13 @@ _chart.chart_4.config = {
 				scaleLabel: {
 					display: true
 				},
-				ticks: {
-					stepSize: 10,
-				}
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
-					min: -3,
+					min: -2,
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
