@@ -525,6 +525,8 @@ _chart.chart_4.config = {
 				scaleLabel: {
 					display: true
 				},
+				type: 'time',
+				distribution: 'series',
 				stepSize: 10
 			}],
 			yAxes: [{
