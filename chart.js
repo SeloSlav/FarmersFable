@@ -520,12 +520,12 @@ _chart.chart_4.config = {
 		},
 		scales: {
 			xAxes: [{
+				type: 'linear',
 				min: 100,
 				display: true,
 				scaleLabel: {
 					display: true
-				},
-				stepSize: 10,
+				}
 			}],
 			yAxes: [{
 				display: true,
@@ -538,7 +538,9 @@ _chart.chart_4.config = {
 						if ((label >= index) && (label < index + 1))
 							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " Kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
-					}
+					},
+					autoSkip: false,
+					stepSize: 10
 				}
 			}]
 		}
