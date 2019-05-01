@@ -520,7 +520,6 @@ _chart.chart_4.config = {
 		},
 		scales: {
 			xAxes: [{
-				type: 'series',
 				min: 0,
 				display: true,
 				scaleLabel: {
