@@ -526,7 +526,6 @@ _chart.chart_4.config = {
 				scaleLabel: {
 					display: true
 				},
-				autoSkip: false,
 				stepSize: 10
 			}],
 			yAxes: [{
