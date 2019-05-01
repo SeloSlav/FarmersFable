@@ -139,7 +139,7 @@ _chart.chart_1.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: -3,
-					beginAtZero: true,
+					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
@@ -150,13 +150,13 @@ _chart.chart_1.config = {
 							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
 						if ((label > 0) && (label < 1))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label >= 1) && (label < 2))
+						if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label > 2) && (label < 3))
+						if ((label > 2) && (label < 3))
 							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
-						else if ((label > 3) && (label < 4))
+						if ((label > 3) && (label < 4))
 							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
-						else if ((label > 4) && (label < 5))
+						if ((label > 4) && (label < 5))
 							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
@@ -257,7 +257,7 @@ _chart.chart_2.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: -3,
-					beginAtZero: true,
+					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
@@ -268,13 +268,13 @@ _chart.chart_2.config = {
 							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
 						if ((label > 0) && (label < 1))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label >= 1) && (label < 2))
+						if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label > 2) && (label < 3))
+						if ((label > 2) && (label < 3))
 							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
-						else if ((label > 3) && (label < 4))
+						if ((label > 3) && (label < 4))
 							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
-						else if ((label > 4) && (label < 5))
+						if ((label > 4) && (label < 5))
 							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
@@ -382,7 +382,7 @@ _chart.chart_3.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: -3,
-					beginAtZero: true,
+					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
@@ -393,13 +393,13 @@ _chart.chart_3.config = {
 							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
 						if ((label > 0) && (label < 1))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label >= 1) && (label < 2))
+						if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label > 2) && (label < 3))
+						if ((label > 2) && (label < 3))
 							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
-						else if ((label > 3) && (label < 4))
+						if ((label > 3) && (label < 4))
 							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
-						else if ((label > 4) && (label < 5))
+						if ((label > 4) && (label < 5))
 							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
@@ -530,7 +530,7 @@ _chart.chart_4.config = {
 				scaleLabel: { labelString: [] },
 				ticks: {
 					min: -3,
-					beginAtZero: true,
+					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
@@ -541,13 +541,13 @@ _chart.chart_4.config = {
 							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
 						if ((label > 0) && (label < 1))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label >= 1) && (label < 2))
+						if ((label >= 1) && (label < 2))
 							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
-						else if ((label > 2) && (label < 3))
+						if ((label > 2) && (label < 3))
 							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
-						else if ((label > 3) && (label < 4))
+						if ((label > 3) && (label < 4))
 							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
-						else if ((label > 4) && (label < 5))
+						if ((label > 4) && (label < 5))
 							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
 					}
