@@ -48,14 +48,14 @@ _chart.chart_0.config = {
 						console.log(label);
 						
 						if ((label >= 1000) && (label < 1000000))
-							return parseFloat(label/1000).toFixed(2)+" K Kg";
+							return parseFloat(label/1000).toFixed(2)+" K kg";
 						else if ((label > 1000000) && (label < 1000000000))
-							return parseFloat(label/1000000).toFixed(2)+" M Kg";
+							return parseFloat(label/1000000).toFixed(2)+" M kg";
 						else if ((label > 1000000000) && (label < 1000000000000))
-							return parseFloat(label/1000000000).toFixed(2)+" B Kg";
+							return parseFloat(label/1000000000).toFixed(2)+" B kg";
 						else if ((label > 1000000000000) && (label < 1000000000000000))
-							return parseFloat(label/1000000000000).toFixed(2)+" T Kg";
-						else return parseFloat(label).toFixed(1) + " Kg";
+							return parseFloat(label/1000000000000).toFixed(2)+" T kg";
+						else return parseFloat(label).toFixed(1) + " kg";
 					}
 				}
 			}]
@@ -144,22 +144,22 @@ _chart.chart_1.config = {
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " kg";
 						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " kg";
 						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " kg";
 						if ((label > 0) && (label < 1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
 						if ((label >= 1) && (label < 2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
 						if ((label > 2) && (label < 3))
-							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " kg";
 						if ((label > 3) && (label < 4))
-							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " kg";
 						if ((label > 4) && (label < 5))
-							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
-						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
 			}]
@@ -263,22 +263,22 @@ _chart.chart_2.config = {
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " kg";
 						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " kg";
 						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " kg";
 						if ((label > 0) && (label < 1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
 						if ((label >= 1) && (label < 2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
 						if ((label > 2) && (label < 3))
-							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " kg";
 						if ((label > 3) && (label < 4))
-							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " kg";
 						if ((label > 4) && (label < 5))
-							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
-						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
 			}]
@@ -389,22 +389,22 @@ _chart.chart_3.config = {
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " kg";
 						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " kg";
 						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " kg";
 						if ((label > 0) && (label < 1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
 						if ((label >= 1) && (label < 2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
 						if ((label > 2) && (label < 3))
-							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " kg";
 						if ((label > 3) && (label < 4))
-							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " Kg";
+							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " kg";
 						if ((label > 4) && (label < 5))
-							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " Kg";
-						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
+							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
 			}]
@@ -536,8 +536,8 @@ _chart.chart_4.config = {
 					stepSize: 1,
 					callback: function(label, index, labels) {
 						if ((label > index) && (label < index + 1))
-							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " Kg";
-						else return Math.pow(10,parseFloat(label).toFixed(1)) + " Kg";
+							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
 			}]
