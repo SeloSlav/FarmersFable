@@ -532,6 +532,7 @@ _chart.chart_4.config = {
 				}
 			}],
 			yAxes: [{
+				type: 'linear',
 				display: true,
 				scaleLabel: { labelString: [] },
 				ticks: {
