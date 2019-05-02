@@ -525,8 +525,10 @@ _chart.chart_4.config = {
 				scaleLabel: {
 					display: true
 				},
-				autoSkip: true,
-				stepSize: 1000
+				ticks: {
+					autoSkip: true,
+					stepSize: 10
+				}
 			}],
 			yAxes: [{
 				display: true,
