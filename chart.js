@@ -523,8 +523,7 @@ _chart.chart_4.config = {
 			xAxes: [{
 				min: 0,
 				ticks: {
-					min: 0,
-					max: 1000,
+					maxTicksLimit: 20,
 					stepSize: 10,
 					autoSkip: true,
 					autoSkipPadding: 30
