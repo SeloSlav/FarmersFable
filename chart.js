@@ -519,6 +519,7 @@ _chart.chart_4.config = {
 			intersect: true
 		},
 		scales: {
+			type: 'linear',
 			xAxes: [{
 				min: 0,
 				ticks: {
@@ -527,7 +528,7 @@ _chart.chart_4.config = {
 					stepSize: 10,
 					autoSkip: true,
 					autoSkipPadding: 30
-				}
+				},
 				display: true,
 				scaleLabel: {
 					display: true
