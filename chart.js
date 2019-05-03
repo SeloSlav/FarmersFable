@@ -143,22 +143,8 @@ _chart.chart_1.config = {
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
-						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " kg";
-						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " kg";
-						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " kg";
-						if ((label > 0) && (label < 1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
-						if ((label >= 1) && (label < 2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
-						if ((label > 2) && (label < 3))
-							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " kg";
-						if ((label > 3) && (label < 4))
-							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " kg";
-						if ((label > 4) && (label < 5))
-							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " kg";
+						if ((label > index) && (label < index + 1))
+							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
@@ -262,22 +248,8 @@ _chart.chart_2.config = {
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
-						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " kg";
-						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " kg";
-						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " kg";
-						if ((label > 0) && (label < 1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
-						if ((label >= 1) && (label < 2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
-						if ((label > 2) && (label < 3))
-							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " kg";
-						if ((label > 3) && (label < 4))
-							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " kg";
-						if ((label > 4) && (label < 5))
-							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " kg";
+						if ((label > index) && (label < index + 1))
+							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
@@ -388,22 +360,8 @@ _chart.chart_3.config = {
 					beginAtZero: false,
 					stepSize: 1,
 					callback: function(label, index, labels) {
-						if ((label >= -3) && (label < -2))
-							return Math.pow(10,parseFloat(label/-3).toFixed(2)) + " kg";
-						if ((label > -2) && (label < -1))
-							return Math.pow(10,parseFloat(label/-2).toFixed(2)) + " kg";
-						if ((label > -1) && (label < 0))
-							return Math.pow(10,parseFloat(label/-1).toFixed(2)) + " kg";
-						if ((label > 0) && (label < 1))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
-						if ((label >= 1) && (label < 2))
-							return Math.pow(10,parseFloat(label/1).toFixed(2)) + " kg";
-						if ((label > 2) && (label < 3))
-							return Math.pow(10,parseFloat(label/2).toFixed(2)) + " kg";
-						if ((label > 3) && (label < 4))
-							return Math.pow(10,parseFloat(label/3).toFixed(2)) + " kg";
-						if ((label > 4) && (label < 5))
-							return Math.pow(10,parseFloat(label/4).toFixed(2)) + " kg";
+						if ((label > index) && (label < index + 1))
+							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
 					}
 				}
