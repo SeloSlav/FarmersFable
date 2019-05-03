@@ -24,7 +24,7 @@ _chart.chart_0.config = {
 	options: {
 		responsive: true,
 		tooltips: {
-			enabled: false,
+			enabled: true,
 			mode: 'index',
 			intersect: false,
 		},
@@ -119,7 +119,7 @@ _chart.chart_1.config = {
 	options: {
 		responsive: true,
 		tooltips: {
-			enabled: false,
+			enabled: true,
 			mode: 'index',
 			intersect: false,
 		},
@@ -238,7 +238,7 @@ _chart.chart_2.config = {
 			text: ''
 		},
 		tooltips: {
-			enabled: false,
+			enabled: true,
 			mode: 'index',
 			intersect: false,
 		},
@@ -364,7 +364,7 @@ _chart.chart_3.config = {
 			text: ''
 		},
 		tooltips: {
-			enabled: false,
+			enabled: true,
 			mode: 'index',
 			intersect: false,
 		},
@@ -510,7 +510,7 @@ _chart.chart_4.config = {
 			text: ''
 		},
 		tooltips: {
-			enabled: false,
+			enabled: true,
 			mode: 'index',
 			intersect: false,
 		},
@@ -519,15 +519,8 @@ _chart.chart_4.config = {
 			intersect: true
 		},
 		scales: {
-			type: 'linear',
 			xAxes: [{
 				min: 0,
-				ticks: {
-					maxTicksLimit: 20,
-					stepSize: 10,
-					autoSkip: true,
-					autoSkipPadding: 30
-				},
 				display: true,
 				scaleLabel: {
 					display: true
