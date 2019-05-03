@@ -520,7 +520,15 @@ _chart.chart_4.config = {
 		},
 		scales: {
 			xAxes: [{
+				type: 'linear'
 				min: 0,
+				ticks: {
+					min: 0,
+					max: 1000,
+					stepSize: 10,
+					autoSkip: true,
+					autoSkipPadding: 30
+				}
 				display: true,
 				scaleLabel: {
 					display: true
