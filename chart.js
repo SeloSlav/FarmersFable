@@ -442,7 +442,7 @@ _chart.chart_4.config = {
 		},
 		{
 			lineTension: 0,
-			label: 'Bill (Sharing)',
+			label: 'Bill (Cooperating)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -452,7 +452,7 @@ _chart.chart_4.config = {
 		},
 		{
 			lineTension: 0,
-			label: 'Ann (Sharing)',
+			label: 'Ann (Cooperating)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
