@@ -172,6 +172,9 @@ _chart.chart_1.config = {
 						if ((label > index) && (label < index + 1))
 							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
+					},
+					gridLines: {
+						display: false
 					}
 				}
 			}]
