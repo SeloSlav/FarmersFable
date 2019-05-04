@@ -9,7 +9,7 @@ var _chart = {
 };
 
 // Look at removing horizontal line at 0
-Chart.plugins.register({
+/*Chart.plugins.register({
    beforeDraw: function(chart) {
       var ctx = chart.chart.ctx,
           x_axis = chart.scales['x-axis-0'],
@@ -29,7 +29,7 @@ Chart.plugins.register({
          ctx.restore();
       });
    }
-});
+});*/
 
 _chart.chart_0.config = {
 	type: 'line',
@@ -79,9 +79,6 @@ _chart.chart_0.config = {
 						else if ((label > 1000000000000) && (label < 1000000000000000))
 							return parseFloat(label/1000000000000).toFixed(2)+" T kg";
 						else return parseFloat(label).toFixed(1) + " kg";
-					},
-					gridLines: {
-						display: false
 					}
 				}
 			}]
@@ -135,7 +132,7 @@ _chart.chart_1.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'],
 		datasets: [{
 		lineTension: 0,
-		label: 'Bill',
+		label: 'Bill',	
 		data: [],
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
@@ -172,9 +169,6 @@ _chart.chart_1.config = {
 						if ((label > index) && (label < index + 1))
 							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
 						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
-					},
-					gridLines: {
-						display: false
 					}
 				}
 			}]
