@@ -8,6 +8,29 @@ var _chart = {
 	chart_4 : {},
 };
 
+// Look at removing horizontal line at 0
+Chart.plugins.register({
+   beforeDraw: function(chart) {
+      var ctx = chart.chart.ctx,
+          x_axis = chart.scales['x-axis-0'],
+          topY = chart.scales['y-axis-0'].top,
+          bottomY = chart.scales['y-axis-0'].bottom;
+      x_axis.options.gridLines.display = false; // hide original grid-lines
+      // loop through x-axis ticks
+      x_axis.ticks.forEach(function(label, index) {
+         if (index === 0) return;
+         var x = x_axis.getPixelForValue(label);
+         ctx.save();
+         ctx.beginPath();
+         ctx.strokeStyle = x_axis.options.gridLines.color;
+         ctx.moveTo(x, topY);
+         ctx.lineTo(x, bottomY);
+         ctx.stroke();
+         ctx.restore();
+      });
+   }
+});
+
 _chart.chart_0.config = {
 	type: 'line',
 	data: {
@@ -56,6 +79,9 @@ _chart.chart_0.config = {
 						else if ((label > 1000000000000) && (label < 1000000000000000))
 							return parseFloat(label/1000000000000).toFixed(2)+" T kg";
 						else return parseFloat(label).toFixed(1) + " kg";
+					},
+					gridLines: {
+						display: false
 					}
 				}
 			}]
