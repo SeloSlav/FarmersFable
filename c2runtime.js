@@ -27708,7 +27708,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
 	cr.plugins_.Audio.prototype.acts.SetSilent,
 	cr.plugins_.Browser.prototype.acts.GoToURLWindow,
-	cr.behaviors.Rex_MoveTo.prototype.acts.SetTargetPosOnObject,
 	cr.behaviors.Rex_MoveTo.prototype.acts.SetTargetPosByDistanceAngle,
 	cr.system_object.prototype.acts.SubVar
 ];};
