@@ -42,6 +42,8 @@ _chart.chart_0.config = {
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
 		strokeColor : "rgba(0, 0, 0, 1)",
+		backgroundColor: "rgb(4, 0, 255)",
+		borderColor: "rgb(4, 0, 255)",
 		}]
 	},
 	options: {
