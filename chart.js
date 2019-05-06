@@ -137,8 +137,8 @@ _chart.chart_1.config = {
 		fill: false,
 		fillColor : "rgba(0, 0, 0, 1)",
 		strokeColor : "rgba(0, 0, 0, 1)",
-		backgroundColor: "rgb(116, 119, 249)",
-		borderColor: "rgb(116, 119, 249)",
+		backgroundColor: "rgb(4, 0, 255)",
+		borderColor: "rgb(4, 0, 255)",
 		}]
 	},
 	options: {
