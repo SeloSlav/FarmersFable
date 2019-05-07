@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1557177465,
+	"version": 1557263659,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -91,6 +91,8 @@
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
 		"media/click.ogg",
+		"media/showtime.m4a",
+		"media/showtime.ogg",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
