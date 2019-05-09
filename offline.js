@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1557263659,
+	"version": 1557381730,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -93,6 +93,8 @@
 		"media/click.ogg",
 		"media/showtime.m4a",
 		"media/showtime.ogg",
+		"media/greatamericannovel.m4a",
+		"media/greatamericannovel.ogg",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
