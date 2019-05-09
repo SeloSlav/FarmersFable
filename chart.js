@@ -225,16 +225,6 @@ _chart.chart_2.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(4, 0, 255)",
-			borderColor: "rgb(4, 0, 255)",
-		},
-		{
-			lineTension: 0,
 			label: 'Ann',
 			data: [],
 			fill: false,
@@ -242,6 +232,15 @@ _chart.chart_2.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 0, 0)",
 			borderColor: "rgb(255, 0, 0)",
+		},{
+			lineTension: 0,
+			label: 'Bill',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(4, 0, 255)",
+			borderColor: "rgb(4, 0, 255)",
 		}]
 	},
 	options: {
@@ -337,16 +336,6 @@ _chart.chart_3.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(4, 0, 255)",
-			borderColor: "rgb(4, 0, 255)",
-		},
-		{
-			lineTension: 0,
 			label: 'Ann',
 			data: [],
 			fill: false,
@@ -354,6 +343,16 @@ _chart.chart_3.config = {
 			strokeColor : "rgba(0, 0, 0, 1)",
 			backgroundColor: "rgb(255, 0, 0)",
 			borderColor: "rgb(255, 0, 0)",
+		},
+		{
+			lineTension: 0,
+			label: 'Bill',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(4, 0, 255)",
+			borderColor: "rgb(4, 0, 255)",
 		}]
 	},
 	options: {
@@ -449,16 +448,6 @@ _chart.chart_4.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ],
 		datasets: [{
 			lineTension: 0,
-			label: 'Bill (Alone)',
-			data: [],
-			fill: false,
-			fillColor : "rgba(0, 0, 0, 1)",
-			strokeColor : "rgba(0, 0, 0, 1)",
-			backgroundColor: "rgb(116, 119, 249)",
-			borderColor: "rgb(116, 119, 249)",
-		},
-		{
-			lineTension: 0,
 			label: 'Ann (Alone)',
 			data: [],
 			fill: false,
@@ -469,7 +458,17 @@ _chart.chart_4.config = {
 		},
 		{
 			lineTension: 0,
-			label: 'Bill (Cooperating)',
+			label: 'Bill (Alone)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(116, 119, 249)",
+			borderColor: "rgb(116, 119, 249)",
+		},
+		{
+			lineTension: 0,
+			label: 'Ann (Cooperating)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -479,7 +478,7 @@ _chart.chart_4.config = {
 		},
 		{
 			lineTension: 0,
-			label: 'Ann (Cooperating)',
+			label: 'Bill (Cooperating)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
