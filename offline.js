@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1557432590,
+	"version": 1557433832,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -87,6 +87,9 @@
 		"images/owen_twitter-sheet0.png",
 		"images/marc_twitter2-sheet0.png",
 		"images/sprite13-sheet0.png",
+		"images/link-sheet0.png",
+		"images/sprite14-sheet0.png",
+		"images/sprite15-sheet0.png",
 		"media/backgroundambients.m4a",
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
