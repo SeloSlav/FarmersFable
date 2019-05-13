@@ -471,7 +471,7 @@ _chart.chart_4.config = {
 			text: ''
 		},
 		tooltips: {
-			enabled: true,
+			enabled: false,
 			mode: 'index',
 			intersect: false,
 		},
