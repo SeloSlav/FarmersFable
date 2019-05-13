@@ -27711,5 +27711,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Browser.prototype.acts.GoToURLWindow,
 	cr.behaviors.Rex_MoveTo.prototype.acts.SetTargetPosByDistanceAngle,
 	cr.system_object.prototype.acts.SubVar,
-	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject
+	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
+	cr.system_object.prototype.exps.tokenat
 ];};
