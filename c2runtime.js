@@ -27712,5 +27712,6 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Rex_MoveTo.prototype.acts.SetTargetPosByDistanceAngle,
 	cr.system_object.prototype.acts.SubVar,
 	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
-	cr.system_object.prototype.exps.tokenat
+	cr.system_object.prototype.exps.tokenat,
+	cr.system_object.prototype.exps["int"]
 ];};
