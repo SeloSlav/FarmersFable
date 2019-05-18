@@ -202,7 +202,7 @@ _chart.chart_2.config = {
 		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
-			label: 'Ann',
+			label: 'Ann (Alone)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -211,7 +211,7 @@ _chart.chart_2.config = {
 			borderColor: "rgb(255, 0, 0)",
 		},{
 			lineTension: 0,
-			label: 'Bill',
+			label: 'Bill (Alone)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
