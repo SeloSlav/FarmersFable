@@ -27935,16 +27935,16 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.lunarray_Tween.prototype.acts.Force,
 	cr.system_object.prototype.acts.SetLayerVisible,
 	cr.system_object.prototype.acts.SetGroupActive,
-	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.plugins_.SpriteFontPlus.prototype.acts.SetText,
+	cr.system_object.prototype.exps.tokenat,
+	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.system_object.prototype.exps.round,
+	cr.system_object.prototype.exps["int"],
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
 	cr.plugins_.Audio.prototype.acts.SetSilent,
 	cr.plugins_.Browser.prototype.acts.GoToURLWindow,
 	cr.behaviors.Rex_MoveTo.prototype.acts.SetTargetPosByDistanceAngle,
-	cr.system_object.prototype.acts.SubVar,
-	cr.system_object.prototype.exps.tokenat,
-	cr.system_object.prototype.exps["int"]
+	cr.system_object.prototype.acts.SubVar
 ];};
