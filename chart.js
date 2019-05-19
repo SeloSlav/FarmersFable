@@ -592,3 +592,108 @@ _chart.chart_4.remove = function(elementId) {
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
 }
+
+_chart.chart_5.config = {
+	type: 'line',
+	data: {
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ],
+		datasets: [{
+			lineTension: 0,
+			label: 'Ann (Alone)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(249, 117, 117)",
+			borderColor: "rgb(249, 117, 117)",
+		},
+		{
+			lineTension: 0,
+			label: 'Bill (Alone)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(116, 119, 249)",
+			borderColor: "rgb(116, 119, 249)",
+		},
+		{
+			lineTension: 0,
+			label: 'Ann (Cooperating)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(148,0,211)",
+			borderColor: "rgb(148,0,211)",
+		},
+		{
+			lineTension: 0,
+			label: 'Bill (Cooperating)',
+			data: [],
+			fill: false,
+			fillColor : "rgba(0, 0, 0, 1)",
+			strokeColor : "rgba(0, 0, 0, 1)",
+			backgroundColor: "rgb(148,0,211)",
+			borderColor: "rgb(148,0,211)",
+		}]
+	},
+	options: {
+		responsive: true,
+		title: {
+			display: false,
+			text: ''
+		},
+		tooltips: {
+			enabled: false,
+			mode: 'index',
+			intersect: false,
+		},
+		hover: {
+			mode: 'nearest',
+			intersect: true
+		},
+		scales: {
+			xAxes: [{
+				min: 0,
+				display: true,
+				scaleLabel: {
+					display: true
+				}
+			}],
+			yAxes: [{
+				type: 'linear',
+				display: true,
+				scaleLabel: { labelString: [] },
+				ticks: {
+					min: -2,
+					beginAtZero: false,
+					stepSize: 1,
+					callback: function(label, index, labels) {
+						if ((label > index) && (label < index + 1))
+							return Math.pow(10,parseFloat(label/index).toFixed(2)) + " kg";
+						else return Math.pow(10,parseFloat(label).toFixed(1)) + " kg";
+					}
+				}
+			}]
+		}
+	}
+};
+_chart.chart_5.show = function(){
+	var _chart_5 = document.getElementById('chart_5container');
+	
+	window._placeHolder_1 = document.getElementById('placeHolder_5');
+	
+	_chart_5.style.width = _placeHolder_1.style.width;
+	_chart_5.style.height = _placeHolder_1.style.height;
+	_chart_5.style.top = _placeHolder_1.style.top;
+	_chart_5.style.left = _placeHolder_1.style.left;
+	_chart_5.style.zIndex = "999";
+	var ctx = document.getElementById('chart_5').getContext('2d');
+	ctx.canvas.width = $('#placeHolder_5').width();
+	ctx.canvas.height = $('#placeHolder_5').height();
+	ctx.canvas.originalwidth = ctx.canvas.width;
+	ctx.canvas.originalheight = ctx.canvas.height;
+	_chart_5.style.display = 'block';
+	_chart.chart_5.chart = new Chart(ctx, _chart.chart_5.config);
+}
