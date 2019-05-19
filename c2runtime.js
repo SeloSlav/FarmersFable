@@ -27914,6 +27914,7 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.Wait,
 	cr.system_object.prototype.acts.GoToLayout,
 	cr.plugins_.Browser.prototype.acts.ExecJs,
+	cr.plugins_.Keyboard.prototype.cnds.OnKey,
 	cr.plugins_.Sprite.prototype.acts.StopAnim,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.plugins_.Touch.prototype.cnds.OnTouchStart,
