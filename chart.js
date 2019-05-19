@@ -103,6 +103,12 @@ _chart.chart_0.hide = function(_value){
 	var _chart_0 = document.getElementById('chart_0_container');
 	_chart_0.style.display = 'none';
 }
+
+_chart.chart_0.remove = function(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
 //
 
 _chart.chart_1.config = {
@@ -194,6 +200,12 @@ _chart.chart_1.reset = function(){
 _chart.chart_1.hide = function(_value){
 	var _chart_1 = document.getElementById('chart_1_container');
 	_chart_1.style.display = 'none';
+}
+
+_chart.chart_1.remove = function(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
 }
 //
 _chart.chart_2.config = {
@@ -306,6 +318,12 @@ _chart.chart_2.hide = function(_value){
 	var _chart_2 = document.getElementById('chart_2_container');
 	_chart_2.style.display = 'none';
 }
+
+_chart.chart_2.remove = function(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
 //
 _chart.chart_3.config = {
 	type: 'line',
@@ -417,6 +435,12 @@ _chart.chart_3.reset = function(_value){
 _chart.chart_3.hide = function(_value){
 	var _chart_3 = document.getElementById('chart_3_container');
 	_chart_3.style.display = 'none';
+}
+
+_chart.chart_3.remove = function(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
 }
 //
 _chart.chart_4.config = {
@@ -561,4 +585,10 @@ _chart.chart_4.reset = function(_value){
 _chart.chart_4.hide = function(_value){
 	var _chart_4 = document.getElementById('chart_4_container');
 	_chart_4.style.display = 'none';
+}
+
+_chart.chart_4.remove = function(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
 }
