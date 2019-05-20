@@ -680,7 +680,7 @@ _chart.chart_5.config = {
 	}
 };
 _chart.chart_5.show = function(){
-	var _chart_5 = document.getElementById('chart_5container');
+	var _chart_5 = document.getElementById('chart_5_container');
 	
 	window._placeHolder_1 = document.getElementById('placeHolder_5');
 	
@@ -696,4 +696,48 @@ _chart.chart_5.show = function(){
 	ctx.canvas.originalheight = ctx.canvas.height;
 	_chart_5.style.display = 'block';
 	_chart.chart_5.chart = new Chart(ctx, _chart.chart_5.config);
+}
+_chart.chart_5.update_0 = function(_value){
+	if ( _chart.chart_5.config.data.datasets[0].data.length < 5) {
+		_chart.chart_5.config.data.datasets[0].data.push(_value);
+	} else {
+		_chart.chart_5.config.data.datasets[0].data.push(_value);
+		_chart.chart_5.config.data.labels.push("Harvest "+(parseInt(_chart.chart_5.config.data.datasets[0].data.length)));
+	}
+	_chart.chart_5.chart.update();
+}
+
+_chart.chart_5.update_1 = function(_value){
+	_chart.chart_5.config.data.datasets[1].data.push(_value);
+	_chart.chart_5.chart.update();
+}
+
+_chart.chart_5.update_2 = function(_value){
+	_chart.chart_5.config.data.datasets[2].data.push(_value);
+	_chart.chart_5.chart.update();
+}
+
+_chart.chart_5.update_3 = function(_value){
+	_chart.chart_5.config.data.datasets[3].data.push(_value);
+	_chart.chart_5.chart.update();
+}
+
+_chart.chart_5.reset = function(_value){
+	_chart.chart_5.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
+	_chart.chart_5.config.data.datasets[0].data = [];
+	_chart.chart_5.config.data.datasets[1].data = [];
+	_chart.chart_5.config.data.datasets[2].data = [];
+	_chart.chart_5.config.data.datasets[3].data = [];
+	_chart.chart_5.chart.update();
+}
+
+_chart.chart_5.hide = function(_value){
+	var chart_5 = document.getElementById('chart_5_container');
+	chart_5.style.display = 'none';
+}
+
+_chart.chart_5.remove = function(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
 }
