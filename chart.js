@@ -591,6 +591,11 @@ _chart.chart_4.remove = function(elementId) {
     // Removes an element from the document
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
+    var p = document.getElementById("c2canvasdiv");
+    var newElement = document.createElement("div");
+    newElement.setAttribute('chart_4_container', elementId);
+    newElement.innerHTML = "<canvas id="chart_4"></canvas>";
+    p.appendChild(newElement);
 }
 
 _chart.chart_5.config = {
