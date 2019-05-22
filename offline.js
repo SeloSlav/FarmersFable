@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1558554141,
+	"version": 1558560738,
 	"fileList": [
 		"data.js",
 		"game.html",
@@ -93,6 +93,7 @@
 		"images/sprite15-sheet0.png",
 		"images/sprite16-sheet0.png",
 		"images/sprite17-sheet0.png",
+		"images/sprite18-sheet0.png",
 		"media/backgroundambients.m4a",
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
