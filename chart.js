@@ -587,7 +587,7 @@ _chart.chart_4.hide = function(_value){
 	_chart_4.style.display = 'none';
 }
 
-_chart.chart_4.remove = function(elementId) {
+/*_chart.chart_4.remove = function(elementId) {
     // Removes an element from the document
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
@@ -596,7 +596,7 @@ _chart.chart_4.remove = function(elementId) {
     newElement.setAttribute('chart_4_container', elementId);
     newElement.innerHTML = "<canvas id="chart_4"></canvas>";
     p.appendChild(newElement);
-}
+}*/
 
 _chart.chart_5.config = {
 	type: 'line',
