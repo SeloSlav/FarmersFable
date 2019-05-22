@@ -588,7 +588,7 @@ _chart.chart_4.hide = function(_value){
 	_chart_4.style.display = 'none';
 }
 
-_chart.chart_4.destroyAndReplace = function(elementId) {
+_chart.chart_4.destroyAndReplace = function(elementId, canvasId) {
     // Removes an element from the document
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
@@ -596,7 +596,7 @@ _chart.chart_4.destroyAndReplace = function(elementId) {
     var newElement = document.createElement("div");
     newElement.setAttribute("id", elementId);
     newElement.setAttribute("style", "position: absolute;")
-    newElement.innerHTML = "<canvas id=\"chart_4\"></canvas>";
+    newElement.innerHTML = "<canvas id=\"" + canvasId + "\"></canvas>";
     p.appendChild(newElement);
 }
 
