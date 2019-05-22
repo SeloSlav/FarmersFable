@@ -6,6 +6,7 @@ var _chart = {
 	chart_2 : {},
 	chart_3 : {},
 	chart_4 : {},
+	chart_5 : {},
 };
 
 _chart.chart_0.config = {
@@ -587,16 +588,17 @@ _chart.chart_4.hide = function(_value){
 	_chart_4.style.display = 'none';
 }
 
-/*_chart.chart_4.remove = function(elementId) {
+_chart.chart_4.destroyAndReplace = function(elementId) {
     // Removes an element from the document
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
     var p = document.getElementById("c2canvasdiv");
     var newElement = document.createElement("div");
-    newElement.setAttribute('chart_4_container', elementId);
-    newElement.innerHTML = "<canvas id="chart_4"></canvas>";
+    newElement.setAttribute("id", elementId);
+    newElement.setAttribute("style", "position: absolute;")
+    newElement.innerHTML = "<canvas id=\"chart_4\"></canvas>";
     p.appendChild(newElement);
-}*/
+}
 
 _chart.chart_5.config = {
 	type: 'line',
