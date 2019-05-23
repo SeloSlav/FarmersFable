@@ -28481,6 +28481,7 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.round,
 	cr.system_object.prototype.exps["int"],
 	cr.plugins_.Touch.prototype.cnds.OnTouchStart,
+	cr.plugins_.Keyboard.prototype.cnds.OnAnyKey,
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.plugins_.Browser.prototype.exps.ExecJS,
 	cr.plugins_.Audio.prototype.cnds.IsSilent,
