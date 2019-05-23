@@ -238,6 +238,8 @@
 		{			
 			cr_createRuntime("c2canvas");
 			_cr = cr_getC2Runtime();
+
+			/* English Menu */
 			$('#page1').click(function(){
 				$( '.dot-nav--item' ).removeClass( "is-active" );
 				$( '#page1' ).addClass( "is-active" );
@@ -268,6 +270,39 @@
 				$( '#page6' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.outro_credits;
 			});
+
+			/* German Menu */
+			$('#page1de').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page1de' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.intro;
+			});
+			$('#page2de').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page2de' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.bill;
+			});
+			$('#page3de').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page3de' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.col;
+			});
+			$('#page4de').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page4de' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.pooling_explainer;
+			});
+			$('#page5de').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page5de' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.conclusion_de;
+			});
+			$('#page6de').click(function(){
+				$( '.dot-nav--item' ).removeClass( "is-active" );
+				$( '#page6de' ).addClass( "is-active" );
+				_cr.changelayout = _cr.layouts.outro_credits;
+			});
+
 			$('#sound_btn').click(function(){
 				var _tmp = _sound;
 				if (_tmp){
@@ -286,26 +321,32 @@
 		function gotoPage1(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page1' ).addClass( "is-active" );
+			$( '#page1de' ).addClass( "is-active" );
 		}
 		function gotoPage2(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page2' ).addClass( "is-active" );
+			$( '#page2de' ).addClass( "is-active" );
 		}
 		function gotoPage3(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page3' ).addClass( "is-active" );
+			$( '#page3de' ).addClass( "is-active" );
 		}
 		function gotoPage4(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page4' ).addClass( "is-active" );
+			$( '#page4de' ).addClass( "is-active" );
 		}
 		function gotoPage5(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page5' ).addClass( "is-active" );
+			$( '#page5de' ).addClass( "is-active" );
 		}
 		function gotoPage6(){
 			$( '.dot-nav--item' ).removeClass( "is-active" );
 			$( '#page6' ).addClass( "is-active" );
+			$( '#page6de' ).addClass( "is-active" );
 		}
 		function showAndHideMenus(menuToShow, menuToHide) {
     		var navMenuToShow = document.getElementById(menuToShow);
