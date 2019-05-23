@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1558628811,
+	"version": 1558637978,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -32,6 +32,7 @@
 		"images/fa4-sheet0.png",
 		"images/sprite-sheet0.png",
 		"images/tiledbackground.png",
+		"images/sf_year.png",
 		"images/ann_col_2-sheet0.png",
 		"images/ann_col_2-sheet1.png",
 		"images/sprite2-sheet0.png",
@@ -96,6 +97,7 @@
 		"images/sprite20-sheet0.png",
 		"images/sprite21-sheet0.png",
 		"images/sprite22-sheet0.png",
+		"images/startbutton5.png",
 		"media/backgroundambients.m4a",
 		"media/backgroundambients.ogg",
 		"media/click.m4a",
