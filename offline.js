@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1558815218,
+	"version": 1558818143,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -78,6 +78,7 @@
 		"images/rice_ann-sheet0.png",
 		"images/more_rain2-sheet0.png",
 		"images/more_rain2-sheet1.png",
+		"images/text_ann_alone.png",
 		"images/sprite11-sheet0.png",
 		"images/sprite12-sheet0.png",
 		"images/bill_pool-sheet0.png",
@@ -94,7 +95,6 @@
 		"images/sprite16-sheet0.png",
 		"images/sprite17-sheet0.png",
 		"images/sprite18-sheet0.png",
-		"images/startgerman.png",
 		"images/sprite20-sheet0.png",
 		"images/sprite21-sheet0.png",
 		"images/sprite22-sheet0.png",
