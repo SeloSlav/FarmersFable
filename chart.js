@@ -26,6 +26,9 @@ _chart.chart_0.config = {
 	},
 	options: {
 		responsive: true,
+ 		legend: {
+        	display: false
+    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -129,6 +132,9 @@ _chart.chart_1.config = {
 	},
 	options: {
 		responsive: true,
+ 		legend: {
+        	display: false
+    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -239,6 +245,9 @@ _chart.chart_2.config = {
 			display: true,
 			text: ''
 		},
+		legend: {
+        	display: false
+    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -357,6 +366,9 @@ _chart.chart_3.config = {
 			display: true,
 			text: ''
 		},
+		legend: {
+        	display: false
+    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -495,6 +507,9 @@ _chart.chart_4.config = {
 			display: false,
 			text: ''
 		},
+		legend: {
+        	display: false
+    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -651,6 +666,9 @@ _chart.chart_5.config = {
 			display: false,
 			text: ''
 		},
+		legend: {
+        	display: false
+    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
