@@ -40,9 +40,11 @@ _chart.chart_0.config = {
 		},
 		scales: {
 			xAxes: [{
+				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true
+					display: true,
+					labelString: 'Harvest'
 				}
 			}],
 			yAxes: [{
@@ -146,11 +148,12 @@ _chart.chart_1.config = {
 		},
 		scales: {
 			xAxes: [{
+				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true
-				},
-				stepSize: 10,
+					display: true,
+					labelString: 'Harvest'
+				}
 			}],
 			yAxes: [{
 				display: true,
@@ -259,11 +262,12 @@ _chart.chart_2.config = {
 		},
 		scales: {
 			xAxes: [{
+				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true
-				},
-				stepSize: 10,
+					display: true,
+					labelString: 'Harvest'
+				}
 			}],
 			yAxes: [{
 				display: true,
@@ -380,11 +384,12 @@ _chart.chart_3.config = {
 		},
 		scales: {
 			xAxes: [{
+				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true
-				},
-				stepSize: 10,
+					display: true,
+					labelString: 'Harvest'
+				}
 			}],
 			yAxes: [{
 				display: true,
@@ -684,7 +689,8 @@ _chart.chart_5.config = {
 				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true
+					display: true,
+					labelString: 'Harvest'
 				}
 			}],
 			yAxes: [{
