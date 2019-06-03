@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1559538936,
+	"version": 1559594792,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -86,6 +86,7 @@
 		"images/bill_pool-sheet2.png",
 		"images/weather_pooling-sheet0.png",
 		"images/weather_pooling-sheet1.png",
+		"images/weather_pooling6-sheet0.png",
 		"images/owen_twitter-sheet0.png",
 		"images/marc_twitter2-sheet0.png",
 		"images/sprite13-sheet0.png",
