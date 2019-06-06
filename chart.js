@@ -12,7 +12,7 @@ var _chart = {
 _chart.chart_0.config = {
 	type: 'line',
 	data: {
-		labels: ['1', '2', '3', '4','5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 		lineTension: 0,
 		label: 'Bill',
@@ -26,9 +26,6 @@ _chart.chart_0.config = {
 	},
 	options: {
 		responsive: true,
- 		legend: {
-        	display: false
-    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -40,11 +37,9 @@ _chart.chart_0.config = {
 		},
 		scales: {
 			xAxes: [{
-				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true,
-					labelString: 'Harvest'
+					display: true
 				}
 			}],
 			yAxes: [{
@@ -94,13 +89,13 @@ _chart.chart_0.update = function(_value){
 		_chart.chart_0.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_0.config.data.datasets[0].data.push(_value);
-		_chart.chart_0.config.data.labels.push((parseInt(_chart.chart_0.config.data.datasets[0].data.length)));
+		_chart.chart_0.config.data.labels.push("Harvest "+(parseInt(_chart.chart_0.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_0.chart.update();
 }
 
 _chart.chart_0.reset = function(_value){
-	_chart.chart_0.config.data.labels = ['1', '2', '3', '4' , '5'];
+	_chart.chart_0.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_0.config.data.datasets[0].data = [];
 	_chart.chart_0.chart.update();
 }
@@ -120,7 +115,7 @@ _chart.chart_0.remove = function(elementId) {
 _chart.chart_1.config = {
 	type: 'line',
 	data: {
-		labels: ['1', '2', '3', '4' , '5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'],
 		datasets: [{
 		lineTension: 0,
 		label: 'Bill',	
@@ -134,9 +129,6 @@ _chart.chart_1.config = {
 	},
 	options: {
 		responsive: true,
- 		legend: {
-        	display: false
-    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -148,12 +140,11 @@ _chart.chart_1.config = {
 		},
 		scales: {
 			xAxes: [{
-				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true,
-					labelString: 'Harvest'
-				}
+					display: true
+				},
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
@@ -196,7 +187,7 @@ _chart.chart_1.update = function(_value){
 		_chart.chart_1.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_1.config.data.datasets[0].data.push(_value);
-		_chart.chart_1.config.data.labels.push((parseInt(_chart.chart_1.config.data.datasets[0].data.length)));
+		_chart.chart_1.config.data.labels.push("Harvest "+(parseInt(_chart.chart_1.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_1.chart.update();
 }
@@ -204,7 +195,7 @@ _chart.chart_1.update = function(_value){
 _chart.chart_1.reset = function(){
 	_chart.chart_1.config.data.datasets[0].data = [];
 	_chart.chart_1.chart.update();
-	_chart.chart_1.config.data.labels = ['1', '2', '3', '4' , '5'];
+	_chart.chart_1.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 }
 
 _chart.chart_1.hide = function(_value){
@@ -221,7 +212,7 @@ _chart.chart_1.remove = function(elementId) {
 _chart.chart_2.config = {
 	type: 'line',
 	data: {
-		labels: ['1', '2', '3', '4','5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
 			label: 'Ann (Alone)',
@@ -232,8 +223,8 @@ _chart.chart_2.config = {
 			backgroundColor: "rgb(255, 0, 0)",
 			borderColor: "rgb(255, 0, 0)",
 		},{
-			lineTension: 0
-,			label: 'Bill (Alone)',
+			lineTension: 0,
+			label: 'Bill (Alone)',
 			data: [],
 			fill: false,
 			fillColor : "rgba(0, 0, 0, 1)",
@@ -248,9 +239,6 @@ _chart.chart_2.config = {
 			display: true,
 			text: ''
 		},
-		legend: {
-        	display: false
-    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -262,12 +250,11 @@ _chart.chart_2.config = {
 		},
 		scales: {
 			xAxes: [{
-				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true,
-					labelString: 'Harvest'
-				}
+					display: true
+				},
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
@@ -311,7 +298,7 @@ _chart.chart_2.update_0 = function(_value){
 		_chart.chart_2.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_2.config.data.datasets[0].data.push(_value);
-		_chart.chart_2.config.data.labels.push((parseInt(_chart.chart_2.config.data.datasets[0].data.length)));
+		_chart.chart_2.config.data.labels.push("Harvest "+(parseInt(_chart.chart_2.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_2.chart.update();
 }
@@ -322,7 +309,7 @@ _chart.chart_2.update_1 = function(_value){
 }
 
 _chart.chart_2.reset = function(_value){
-	_chart.chart_2.config.data.labels = ['1', '2', '3', '4' , '5'];
+	_chart.chart_2.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_2.config.data.datasets[0].data = [];
 	_chart.chart_2.config.data.datasets[1].data = [];
 	_chart.chart_2.chart.update();
@@ -342,7 +329,7 @@ _chart.chart_2.remove = function(elementId) {
 _chart.chart_3.config = {
 	type: 'line',
 	data: {
-		labels: ['1', '2', '3', '4','5'],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4','Harvest 5'],
 		datasets: [{
 			lineTension: 0,
 			label: 'Ann (Cooperating)',
@@ -370,9 +357,6 @@ _chart.chart_3.config = {
 			display: true,
 			text: ''
 		},
-		legend: {
-        	display: false
-    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -384,12 +368,11 @@ _chart.chart_3.config = {
 		},
 		scales: {
 			xAxes: [{
-				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true,
-					labelString: 'Harvest'
-				}
+					display: true
+				},
+				stepSize: 10,
 			}],
 			yAxes: [{
 				display: true,
@@ -433,7 +416,7 @@ _chart.chart_3.update_0 = function(_value){
 		_chart.chart_3.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_3.config.data.datasets[0].data.push(_value);
-		_chart.chart_3.config.data.labels.push((parseInt(_chart.chart_3.config.data.datasets[0].data.length)));
+		_chart.chart_3.config.data.labels.push("Harvest "+(parseInt(_chart.chart_3.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_3.chart.update();
 }
@@ -444,7 +427,7 @@ _chart.chart_3.update_1 = function(_value){
 }
 
 _chart.chart_3.reset = function(_value){
-	_chart.chart_3.config.data.labels = ['1', '2', '3', '4' , '5'];
+	_chart.chart_3.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_3.config.data.datasets[0].data = [];
 	_chart.chart_3.config.data.datasets[1].data = [];
 	_chart.chart_3.chart.update();	
@@ -464,7 +447,7 @@ _chart.chart_3.remove = function(elementId) {
 _chart.chart_4.config = {
 	type: 'line',
 	data: {
-		labels: ['1', '2', '3', '4' , '5' ],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ],
 		datasets: [{
 			lineTension: 0,
 			label: 'Ann (Alone)',
@@ -512,9 +495,6 @@ _chart.chart_4.config = {
 			display: false,
 			text: ''
 		},
-		legend: {
-        	display: false
-    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -529,8 +509,7 @@ _chart.chart_4.config = {
 				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true,
-					labelString: 'Harvest'
+					display: true
 				}
 			}],
 			yAxes: [{
@@ -575,7 +554,7 @@ _chart.chart_4.update_0 = function(_value){
 		_chart.chart_4.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_4.config.data.datasets[0].data.push(_value);
-		_chart.chart_4.config.data.labels.push((parseInt(_chart.chart_4.config.data.datasets[0].data.length)));
+		_chart.chart_4.config.data.labels.push("Harvest "+(parseInt(_chart.chart_4.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_4.chart.update();
 }
@@ -596,7 +575,7 @@ _chart.chart_4.update_3 = function(_value){
 }
 
 _chart.chart_4.reset = function(_value){
-	_chart.chart_4.config.data.labels = ['1', '2', '3', '4' , '5'];
+	_chart.chart_4.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_4.config.data.datasets[0].data = [];
 	_chart.chart_4.config.data.datasets[1].data = [];
 	_chart.chart_4.config.data.datasets[2].data = [];
@@ -624,7 +603,7 @@ _chart.chart_4.destroyAndReplace = function(elementId, canvasId) {
 _chart.chart_5.config = {
 	type: 'line',
 	data: {
-		labels: ['1', '2', '3', '4' , '5' ],
+		labels: ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5' ],
 		datasets: [{
 			lineTension: 0,
 			label: 'Ann (Alone)',
@@ -672,9 +651,6 @@ _chart.chart_5.config = {
 			display: false,
 			text: ''
 		},
-		legend: {
-        	display: false
-    	},
 		tooltips: {
 			enabled: false,
 			mode: 'index',
@@ -689,8 +665,7 @@ _chart.chart_5.config = {
 				min: 0,
 				display: true,
 				scaleLabel: {
-					display: true,
-					labelString: 'Harvest'
+					display: true
 				}
 			}],
 			yAxes: [{
@@ -734,7 +709,7 @@ _chart.chart_5.update_0 = function(_value){
 		_chart.chart_5.config.data.datasets[0].data.push(_value);
 	} else {
 		_chart.chart_5.config.data.datasets[0].data.push(_value);
-		_chart.chart_5.config.data.labels.push((parseInt(_chart.chart_5.config.data.datasets[0].data.length)));
+		_chart.chart_5.config.data.labels.push("Harvest "+(parseInt(_chart.chart_5.config.data.datasets[0].data.length)));
 	}
 	_chart.chart_5.chart.update();
 }
@@ -755,7 +730,7 @@ _chart.chart_5.update_3 = function(_value){
 }
 
 _chart.chart_5.reset = function(_value){
-	_chart.chart_5.config.data.labels = ['1', '2', '3', '4' , '5'];
+	_chart.chart_5.config.data.labels = ['Harvest 1', 'Harvest 2', 'Harvest 3', 'Harvest 4' , 'Harvest 5'];
 	_chart.chart_5.config.data.datasets[0].data = [];
 	_chart.chart_5.config.data.datasets[1].data = [];
 	_chart.chart_5.config.data.datasets[2].data = [];

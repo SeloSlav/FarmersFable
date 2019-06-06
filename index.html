@@ -238,6 +238,7 @@
 		{			
 			cr_createRuntime("c2canvas");
 			_cr = cr_getC2Runtime();
+
 			/* English Menu */
 			$('#page1').click(function(){
 				$( '.dot-nav--item' ).removeClass( "is-active" );
@@ -269,6 +270,7 @@
 				$( '#page6' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.outro_credits;
 			});
+
 			/* German Menu */
 			$('#page1de').click(function(){
 				$( '.dot-nav--item' ).removeClass( "is-active" );
@@ -300,6 +302,7 @@
 				$( '#page6de' ).addClass( "is-active" );
 				_cr.changelayout = _cr.layouts.outro_credits;
 			});
+
 			$('#sound_btn').click(function(){
 				var _tmp = _sound;
 				if (_tmp){
